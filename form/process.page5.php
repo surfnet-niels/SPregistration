@@ -23,25 +23,26 @@ $filename = "/tmp/".uniqid("spForm_").".xml";
 // key value pairs by :
 
 // TXT version
-$conextdataTXT .= "*Thank you for your request to conext a new Servide Provider!*";
-$conextdataTXT .= "Date : " . $timestamp ."\n";
-$conextdataTXT .= "Request made by: " .$user ."\n";
-$conextdataTXT .= "From IP adress: " .$ip ."\n";
-$conextdataTXT .= "Email:" .$email ."\n";
-$conextdataTXT .= "Home Organisation: " .$home_org ."\n";
+$conextdataTXT .= "*Thank you for your request to conext a new Servide Provider!*\n";
+$conextdataTXT .= "=======================================================================================================\n";
+$conextdataTXT .= "*Date*: " . $timestamp ."\n";
+$conextdataTXT .= "*Request made by*: " .$user ."\n";
+$conextdataTXT .= "*From IP adress*: " .$ip ."\n";
+$conextdataTXT .= "*Email*: " .$email ."\n";
+$conextdataTXT .= "*Home Organisation*: " .$home_org ."\n";
 
 $conextdataTXT .= "\nA copy of this information was forwarded to your email address.\n";
 
 $conextdataTXT .= "\n*We revieved the following application information:*\n";
 foreach($formArray as $conextdataKey => $conextdatavalue){
-	$conextdataTXT .= $conextdataKey. ": " . $conextdatavalue."\n";
+	$conextdataTXT .= "*".$conextdataKey. "*: " . $conextdatavalue."\n";
 }
 $conextdataTXT .= "\n*Please use the provided Metadata URL to publish your saml metadata at:*\n";
 $conextdataTXT .= "=======================================================================================================\n";
 $conextdataTXT .= $metadataURL . "\n";
 $conextdataTXT .= "=======================================================================================================\n";
 
-$conextdataTXT .= "\n*The following SAML2 Metadata was validatedn";
+$conextdataTXT .= "\n*The following SAML2 Metadata was validated*\n";
 $conextdataTXT .= "=======================================================================================================\n";
 $conextdataTXT .= beautifyXML($metadata)."\n";
 $conextdataTXT .= "=======================================================================================================\n";
