@@ -32,7 +32,6 @@ $conextdataHTML .= "<tr><td><b>Email</b>: </td><td>" .$email . "</td></tr>";
 $conextdataHTML .= "<tr><td><b>Home Organisation</b>: </td><td>" .$home_org . "</td><td></td></tr></table></div>";
 
 $conextdataHTML .= "<p>A copy of this information was forwarded to your email address.</p>";
-$conextdataHTML .= "<p>Please use the provided Metadata file to publish your saml metadata at".$metadataURL."</p>";
 
 $conextdataHTML .= "<h3>We revieved the following application information:</h3>";
 $conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-color: #FFFFFF; border-style: dashed; margin: 1em 0.3em 2.5em;'>";
@@ -46,6 +45,11 @@ $conextdataHTML .= "</table></div>";
 $conextdataHTML .= "<h3>We revieved the following SAML2 Metadata:</h3>";
 $conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-color: #FFFFFF; border-style: dashed; margin: 1em 0.3em 2.5em;'><pre>";
 $conextdataHTML .= htmlspecialchars(beautifyXML($metadata));
+$conextdataHTML .= "</pre></div>";
+
+$conextdataHTML .= "<h3>Please use the provided Metadata URL to publish your saml metadata at:</h3>";
+$conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-color: #FFFFFF; border-style: dashed; margin: 1em 0.3em 2.5em;'><pre>";
+$conextdataHTML .= $metadataURL;
 $conextdataHTML .= "</pre></div>";
 
 print($conextdataHTML);
