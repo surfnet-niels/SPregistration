@@ -4,6 +4,8 @@ $formArray = $_SESSION["formContent"]["ConnectionDetails"];
 $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 $metadata = $_SESSION["formContent"]['validatedMetadata']['metadata'];
 
+$requestid = MD5($metadata);
+
 $conextdataHTML = "";
 $conextdataTXT = "";
 
@@ -25,6 +27,7 @@ $filename = "/tmp/".uniqid("spForm_").".xml";
 // TXT version
 $conextdataTXT .= "*Thank you for your request to conext a new Servide Provider!*\n";
 $conextdataTXT .= "=======================================================================================================\n";
+$conextdataTXT .= "*Request ID*: " .$requestid ."\n";
 $conextdataTXT .= "*Date*: " . $timestamp ."\n";
 $conextdataTXT .= "*Request made by*: " .$user ."\n";
 $conextdataTXT .= "*From IP adress*: " .$ip ."\n";
@@ -51,6 +54,7 @@ $conextdataTXT .= "=============================================================
 // HTML version
 $conextdataHTML .= "<h2>Thank you for your request to conext a new Servide Provider!</h2>";
 $conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-color: #FFFFFF; border-style: dashed; margin: 1em 0.3em 2.5em;'>";
+$conextdataHTML .= "<table><tr><td><b>Request ID</b>: </td><td>" . $requestid ."</td></tr>";
 $conextdataHTML .= "<table><tr><td><b>Date</b>: </td><td>" . $timestamp ."</td></tr>";
 $conextdataHTML .= "<tr><td><b>Request made by</b>: </td><td>" .$user . "</td></tr>";
 $conextdataHTML .= "<tr><td><b>From IP adress</b>: </td><td>" .$ip . "</td></tr>";
@@ -87,12 +91,11 @@ $sendok = sendMail(	$to_email,
     $from_email,
     "SPform",
     "",
-    "[SPform] New SP connection request",
+    "[SPregistration] New SP connection request" . $$requestid,
     $conextdataTXT,
     $conextdataHTML,
     $filename,
     "text/xml");
-
 unlink($filename);
 
 echo "Send: " . $sendok;
