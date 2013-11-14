@@ -4,13 +4,14 @@ $formArray = $_SESSION["formContent"]["ConnectionDetails"];
 $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 $metadata = $_SESSION["formContent"]['validatedMetadata']['metadata'];
 
-$requestid = MD5($metadata);
-
 $conextdataHTML = "";
 $conextdataTXT = "";
 
 $timestamp = date("d-m-Y H:i");
 $ip = $_SERVER["REMOTE_ADDR"];
+
+$requestid = MD5($metadata . $timestamp . $ip);
+
 
 //Add user to the mail to send a copy
 $to_email .= "," . $email;
