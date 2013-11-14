@@ -5,6 +5,7 @@ $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 $metadata = $_SESSION["formContent"]['validatedMetadata']['metadata'];
 
 $conextdataHTML = "";
+$conextdataTXT = "";
 
 $timestamp = date("d-m-Y H:i");
 $ip = $_SERVER["REMOTE_ADDR"];
@@ -21,8 +22,32 @@ $filename = "/tmp/".uniqid("spForm_").".xml";
 // Fields are split by ;
 // key value pairs by :
 
-//$conextdata = explode(";",$conextdata);
+// TXT version
+$conextdataTXT .= "*Thank you for your request to conext a new Servide Provider!*";
+$conextdataTXT .= "Date : " . $timestamp ."\n";
+$conextdataTXT .= "Request made by: " .$user ."\n";
+$conextdataTXT .= "From IP adress: " .$ip ."\n";
+$conextdataTXT .= "Email:" .$email ."\n";
+$conextdataTXT .= "Home Organisation: " .$home_org ."\n";
 
+$conextdataTXT .= "\nA copy of this information was forwarded to your email address.\n";
+
+$conextdataTXT .= "\n*We revieved the following application information:*\n";
+foreach($formArray as $conextdataKey => $conextdatavalue){
+	$conextdataTXT .= $conextdataKey. ": " . $conextdatavalue."\n";
+}
+$conextdataTXT .= "\n*Please use the provided Metadata URL to publish your saml metadata at:*\n";
+$conextdataTXT .= "=======================================================================================================\n";
+$conextdataTXT .= $metadataURL . "\n";
+$conextdataTXT .= "=======================================================================================================\n";
+
+$conextdataTXT .= "\n*The following SAML2 Metadata was validatedn";
+$conextdataTXT .= "=======================================================================================================\n";
+$conextdataTXT .= beautifyXML($metadata)."\n";
+$conextdataTXT .= "=======================================================================================================\n";
+
+
+// HTML version
 $conextdataHTML .= "<h2>Thank you for your request to conext a new Servide Provider!</h2>";
 $conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-color: #FFFFFF; border-style: dashed; margin: 1em 0.3em 2.5em;'>";
 $conextdataHTML .= "<table><tr><td><b>Date</b>: </td><td>" . $timestamp ."</td></tr>";
@@ -62,7 +87,7 @@ $sendok = sendMail(	$to_email,
     "SPform",
     "",
     "[SPform] New SP connection request",
-    $conextdataHTML,
+    $conextdataTXT,
     $conextdataHTML,
     $filename,
     "text/xml");
