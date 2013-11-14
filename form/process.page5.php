@@ -52,12 +52,9 @@ $conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-co
 $conextdataHTML .= htmlspecialchars(beautifyXML($metadata));
 $conextdataHTML .= "</pre></div>";
 
-
-
 print($conextdataHTML);
-//var_dump($conextdata);
 
-echo "Sending Email....;
+echo "Sending Email....";
 writeFile($filename, $metadata);
 
 $sendok = sendMail(	$to_email,
