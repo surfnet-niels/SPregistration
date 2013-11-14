@@ -57,6 +57,7 @@ $conextdataHTML .= "</pre></div>";
 print($conextdataHTML);
 //var_dump($conextdata);
 
+echo "Sending Email....;
 writeFile($filename, $metadata);
 
 $sendok = sendMail(	$to_email,
@@ -64,7 +65,7 @@ $sendok = sendMail(	$to_email,
     "SPform",
     "",
     "[SPform] New SP connection request",
-    $conextdata,
+    $conextdataHTML,
     $conextdataHTML,
     $filename,
     "text/xml");
