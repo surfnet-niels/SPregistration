@@ -53,7 +53,7 @@ git clone https://github.com/andreassolberg/SAMLmetaJS
 
 * Install geshi
 wget http://sourceforge.net/projects/geshi/files/geshi/GeSHi%201.0.8.11/GeSHi-1.0.8.11.tar.gz/download
-tar xvzf  .tar.gz
-ln -s GeSHi-1.0.8.11 geshi
+tar xvzf GeSHi-1.0.8.11.tar.gz
+
 
 
