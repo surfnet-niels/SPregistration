@@ -1,15 +1,8 @@
 <?php 
-//$editedMetadata = $_POST["metadata"];
-
-//include_once '../geshi/geshi.php';
-//$geshi = new GeSHi(beautifyXML($editedMetadata), "XML");
-//$geshi = new GeSHi($editedMetadata, "XML");
 
 $formArray = $_SESSION["formContent"]["ConnectionDetails"];
 $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 $metadata = $_SESSION["formContent"]['validatedMetadata']['metadata'];
-
-
 
 $conextdataHTML = "";
 
@@ -52,7 +45,7 @@ $conextdataHTML .= "</table></div>";
 
 $conextdataHTML .= "<h3>We revieved the following SAML2 Metadata:</h3>";
 $conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-color: #FFFFFF; border-style: dashed; margin: 1em 0.3em 2.5em;'><pre>";
-$conextdataHTML .= htmlspecialchars(beautify($metadata));
+$conextdataHTML .= htmlspecialchars(beautifyXML($metadata));
 $conextdataHTML .= "</pre></div>";
 
 print($conextdataHTML);
