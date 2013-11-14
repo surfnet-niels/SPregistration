@@ -55,7 +55,7 @@ $conextdataTXT .= "=============================================================
 $conextdataHTML .= "<h2>Thank you for your request to conext a new Servide Provider!</h2>";
 $conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-color: #FFFFFF; border-style: dashed; margin: 1em 0.3em 2.5em;'>";
 $conextdataHTML .= "<table><tr><td><b>Request ID</b>: </td><td>" . $requestid ."</td></tr>";
-$conextdataHTML .= "<table><tr><td><b>Date</b>: </td><td>" . $timestamp ."</td></tr>";
+$conextdataHTML .= "<tr><td><b>Date</b>: </td><td>" . $timestamp ."</td></tr>";
 $conextdataHTML .= "<tr><td><b>Request made by</b>: </td><td>" .$user . "</td></tr>";
 $conextdataHTML .= "<tr><td><b>From IP adress</b>: </td><td>" .$ip . "</td></tr>";
 $conextdataHTML .= "<tr><td><b>Email</b>: </td><td>" .$email . "</td></tr>";
