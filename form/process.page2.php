@@ -1,7 +1,3 @@
-<?php 
-include 'functions.php';
-?>
-
 <section>
 <h2><?php echo $pageHeaders[$pagenr]?></h2>
 <div class="content">

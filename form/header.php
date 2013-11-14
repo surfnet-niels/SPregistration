@@ -1,12 +1,18 @@
 <?php 
 
 // Decent debugging:
-//require '../../kint/Kint.class.php';
+require '../../kint/Kint.class.php';
+include_once 'functions.php';
+
+// Email is send from and to
+$to_email = "surfconext-beheer@surfnet.nl";
+$from_email = "surfconext-beheer@surfnet.nl";
+
 
 // Require user AuthN (true/false)
 // If true, Assumes simplesamlphp to be installed
 // Turn it of for easy dev work on form
-$requireAuthN = true;
+$requireAuthN = false;
 
 if ($requireAuthN) {
 	require_once('../../../simplesamlphp/lib/_autoload.php');
@@ -41,7 +47,7 @@ $pageHeaders = array(	"1" => "Introduction",
 						"301" => "Confirm Metadata",
 						"4" => "Validate Metadata", 
 						"401" => "Overview",
-						"5" => "Submit Request");
+						"501" => "Request Submitted");
 
 // data headers
 // No records are created for pages which have no headers
@@ -52,7 +58,7 @@ $formArrayHeaders = array(	"1" => NULL,
 						"301" => "confirmedMetadata",
 						"4" => NULL, 
 						"401" => "validatedMetadata",
-						"5" => NULL);
+						"501" => NULL);
 
 if (isset($_POST["page"])) {
 	$pagenr = $_POST["page"];
@@ -98,5 +104,4 @@ if (!isset($_SESSION['count'])) {
 ?>
 <div style="float: middle; min-height: 50px" title="header">
 <!-- <div style="float: left" title="purpose">Page: <?php echo $pagenr ?></div> -->
-<!-- <div style="float: right" title="purpose">Login</div> -->
 </div>

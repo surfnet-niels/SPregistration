@@ -6,38 +6,12 @@
 
 <h3>Welcome to the SURFconext Service Provider Registration form</h3>
 
-<?php if ($requireAuthN && $as->isAuthenticated()) { ?>	
-   	<p>
+    <p>
     	Hello <?php echo $user; ?>, <br>
     	<br>
     	For the purpose of this registration we will use the following email address: <b><?php echo $email; ?></b>
     	<br>You may provide 'formal' contact endpoint(s) for you service via this form.
     <p>
-<?php 
- } else {
-
-?>
-   	<p>
-   		When you want to use SURFconext for the SAML2 based authentication to your service, some organisational and technical information needs to be exchanged. 
-   		These form helps you to provide the SURFconext operations team with correct and complete (meta)data. This will ensure the connection process is as smooth as possible.
-    <p>
-<?php  
-
-	if($requireAuthN) {
-		$url = $as->getLoginURL();
-		print('<a href="' . htmlspecialchars($url) . '">Login</a>');
-		}
-} 
-?>
-    
-    <h3>Login</h3>
-    <p>
-		For the purpose of this registration we require a login using either a SURFconext federation Identity Provider (IdP), or with one of the Guest Identity Providers - "Social ID | OneGini" or "OpenIdP"
-    	<ul>
-    		<li>If you do not have an account at either of the Guest Identity Providers, one can be created when selecting the preferred Guest Identity Provider.</li>
-    		<li>If you are regestering a new service on behalf of your institution please always use the institutional IdP to login.</li>   
-    	</ul>        
-    </p>
 
     <h3>Using these forms</h3>
     <p>

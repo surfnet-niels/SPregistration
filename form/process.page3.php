@@ -1,6 +1,4 @@
 <?php 
-include 'functions.php';
-
 $metadataURL = $_POST["metadataURL"];
 $metadataXML = $_POST["metadataXML"];
 

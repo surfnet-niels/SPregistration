@@ -1,9 +1,5 @@
 <?php 
-include 'functions.php';
-
 $confirmedMetadata = $_POST["confirmedMetadata"];
-
-
 ?>
 
 
