@@ -42,15 +42,17 @@ foreach($formArray as $conextdataKey => $conextdatavalue){
 }
 $conextdataHTML .= "</table></div>";
 
-$conextdataHTML .= "<h3>We revieved the following SAML2 Metadata:</h3>";
-$conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-color: #FFFFFF; border-style: dashed; margin: 1em 0.3em 2.5em;'><pre>";
-$conextdataHTML .= htmlspecialchars(beautifyXML($metadata));
-$conextdataHTML .= "</pre></div>";
-
 $conextdataHTML .= "<h3>Please use the provided Metadata URL to publish your saml metadata at:</h3>";
 $conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-color: #FFFFFF; border-style: dashed; margin: 1em 0.3em 2.5em;'><pre>";
 $conextdataHTML .= $metadataURL;
 $conextdataHTML .= "</pre></div>";
+
+$conextdataHTML .= "<h3>The following SAML2 Metadata was validated</h3>";
+$conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-color: #FFFFFF; border-style: dashed; margin: 1em 0.3em 2.5em;'><pre>";
+$conextdataHTML .= htmlspecialchars(beautifyXML($metadata));
+$conextdataHTML .= "</pre></div>";
+
+
 
 print($conextdataHTML);
 //var_dump($conextdata);
@@ -67,7 +69,7 @@ $sendok = sendMail(	$to_email,
     $filename,
     "text/xml");
 
-print($sendok);
+print("Send: " . $sendok);
 
 unlink($filename);
 
