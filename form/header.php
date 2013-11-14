@@ -1,7 +1,7 @@
 <?php 
 
 // Decent debugging:
-require '../../kint/Kint.class.php';
+//require '../../kint/Kint.class.php';
 include_once 'functions.php';
 
 // Email is send from and to
@@ -12,7 +12,7 @@ $from_email = "surfconext-beheer@surfnet.nl";
 // Require user AuthN (true/false)
 // If true, Assumes simplesamlphp to be installed
 // Turn it of for easy dev work on form
-$requireAuthN = false;
+$requireAuthN = true;
 
 if ($requireAuthN) {
 	require_once('../../../simplesamlphp/lib/_autoload.php');
