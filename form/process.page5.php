@@ -69,10 +69,9 @@ $sendok = sendMail(	$to_email,
     $filename,
     "text/xml");
 
-print("Send: " . $sendok);
-
 unlink($filename);
 
+echo "Send: " . $sendok;
 
 ?>
 
