@@ -52,7 +52,7 @@ print($conextdataHTML);
 //var_dump($conextdata);
 
 writeFile($filename, $metadata);
-/*
+
 $sendok = sendMail(	$to_email,
     $from_email,
     "SPform",
@@ -62,16 +62,8 @@ $sendok = sendMail(	$to_email,
     $conextdataHTML,
     $filename,
     "text/xml");
-*/
-$sendok = sendMail(	"nidi@surfnet.nl",
-		$from_email,
-		"SPform",
-		"",
-		"[SPregistration] New SP registration request",
-		$conextdataHTML,
-		$conextdataHTML,
-		$filename,
-		"text/xml");
+
+print($sendok);
 
 unlink($filename);
 
