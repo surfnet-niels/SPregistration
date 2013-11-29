@@ -11,7 +11,7 @@ $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 //d($_SESSION);
 ?>
 
-<section>
+<section class="content">
 <h2><?php echo $pageHeaders[$pagenr]?></h2>
 <div class="content">
 <form action="index.php" method="post>

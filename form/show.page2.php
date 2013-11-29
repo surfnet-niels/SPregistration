@@ -1,7 +1,4 @@
-
-<div style="float: middle" title="page2content">
-
-<section>
+<section class="content">
 <h2><?php echo $pageHeaders[$pagenr];?></h2>
 <div class="content">
 
@@ -13,9 +10,9 @@
 				<div>
 					<p>
 						Any connection to the SURFconext platform is subject to a SURFconext
-							contract</a>, stating security, data protection and privacy
+							contract, stating security, data protection and privacy
 						regulations.
-					<p>
+					</p>
 					<ul>
 						<li>Institutions that are <a target="top"
 							href="http://www.surf.nl/nl/oversurf/instellingen/Pages/Default.aspx">members
@@ -34,7 +31,7 @@
 								of SURFnet</a>.
 						</li>
 					</ul>
-					</p>
+					<p/>
 				</div>
 				<div style="float: left; width: 70%" title="ServiceType">
 					Please provide us with some information on the service type and licence regime you wish use:<br/>
@@ -132,13 +129,14 @@
 					<textarea name="Planning" id="planning" style="width: 80%; height: 200px"></textarea>
 				</div>
 			</fieldset>
-	
-	<input type="submit" value="Continue">
-	
-	</form>
+
+        <button type="submit" class="btn btn-primary">Continue</button>
+
+
+    </form>
 
 </div>
 
 </section>
-</div>
+
 

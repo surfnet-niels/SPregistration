@@ -1,6 +1,4 @@
- <div style="float: middle" title="page2content">
- 
-<section>
+<section class="content">
 
 <div class="content">
 <h2><?php echo $pageHeaders[$pagenr]?></h2>
@@ -29,11 +27,10 @@
 	<div style="float: left; width: 70%" title="SURFmarket">	
 		<p>Metadata XML:<br>
 		<textarea name="metadataXML" id="metadataXML" style="width: 80%; height: 500px"></textarea><br>
-		<input type="submit" value="Submit XML" style="float: left"></p>
-		
+            <button type="submit" class="btn btn-primary left">Submit XML</button>
+
 	</div>
 </fieldset>
 </form>
 </div>
 </section>
-</div> 

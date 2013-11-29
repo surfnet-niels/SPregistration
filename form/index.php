@@ -26,6 +26,11 @@
         <link rel="stylesheet" href="../SURFnet-styleguide/css/layout.css">
         <link rel="stylesheet" href="../SURFnet-styleguide/css/generic.css">
         <link rel="stylesheet" href="../SURFnet-styleguide/css/component-userbox.css">
+
+        <!-- Non-bootstrap Styling -->
+        <link rel="stylesheet" href="./css/sp-registration.css">
+
+
 	
 </head>
 <body>

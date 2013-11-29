@@ -1,4 +1,4 @@
-<section>
+<section class="content">
 <h2><?php echo $pageHeaders[$pagenr]?></h2>
 <div class="content">
 
@@ -71,7 +71,7 @@
 
 	    <form action="index.php" method="post">
 	    	<input type="hidden" name="page" value="3">
-	    	<input type="submit" value="Confirm">
+            <button type="submit" class="btn btn-primary">Confirm</button>
 	    	<input type="button" value="Change" onClick="window.history.back();">
 		</form>
 	</div>

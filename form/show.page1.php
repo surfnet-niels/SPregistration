@@ -1,6 +1,5 @@
- <div style="float: middle" title="page1content">
- 
-<section>
+
+<section class="content">
 <h2><?php echo $pageHeaders[$pagenr]?></h2>
 <div class="content">
 
@@ -35,7 +34,7 @@
 
     <form action="index.php" method="post">
     	<input type="hidden" name="page" value="2">
-    	<input type="submit" value="Continue">
+    	<button type="submit" class="btn btn-primary">Continue</button>
 	</form>
 </div>
 </section>

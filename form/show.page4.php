@@ -3,8 +3,6 @@ $confirmedMetadata = $_POST["confirmedMetadata"];
 ?>
 
 
-<div style="float: middle" title="page4content">
-
 <!-- Include Google maps to use with SAMLmetaJS locaiton plugin -->
 <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>  -->
 
@@ -39,7 +37,7 @@ $confirmedMetadata = $_POST["confirmedMetadata"];
 	<script type="text/javascript" src="SAMLmetaJS/samlmeta.info-organization-contact-certs-saml2sp-attributes.min.js"></script> 
 -->
 
-<link type="text/css" href="../SAMLmetaJS/samlmetajs/css/samlmetajs.css" rel="Stylesheet" />
+<link type="text/css" href="../SAMLmetaJS/samlmetajs/css/samlmetajs.css" rel="stylesheet" />
 	
 <script type="text/javascript">
     $(document).ready(function(){
@@ -72,7 +70,7 @@ $confirmedMetadata = $_POST["confirmedMetadata"];
     });
 </script>
 
-<section>
+<section class="content">
 <h2><?php echo $pageHeaders[$pagenr]?></h2>
 <div class="content">
 
@@ -93,7 +91,8 @@ $confirmedMetadata = $_POST["confirmedMetadata"];
 	
 </fieldset>	
 <textarea name="metadata" id="providedmetadata" style="display:none;"><?php echo $confirmedMetadata ?></textarea>
-<input type="submit" value="Continue" />
+    <button type="submit" class="btn btn-primary">Continue</button>
+
 </form>
 </div>
 </section>

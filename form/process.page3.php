@@ -46,7 +46,7 @@ $geshi = new GeSHi(beautifyXML($metadataFile), "XML");
 
 ?>
 
-<section>
+<section class="content">
 <h2><?php echo $pageHeaders[$pagenr]?></h2>
 <div class="content">
 <form action="index.php" method="post">
@@ -71,7 +71,7 @@ $geshi = new GeSHi(beautifyXML($metadataFile), "XML");
 	
 	<textarea name="confirmedMetadata" style="display:none;"><?php echo $metadataFile;?></textarea>
 	<input type="hidden" name="page" value="4">
-	<input type="submit" value="Confirm">
+    <button type="submit" class="btn btn-primary">Confirm</button>
 	    	
 	    	
 <?php };?>	    	
