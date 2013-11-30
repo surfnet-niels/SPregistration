@@ -17,19 +17,21 @@ Dependencies
 
 The SURFconext SP form has a number of external dependancies which must be met:
 
-* git must be installed, as was as a working php5.x server
+* git must be installed, as well as a working php5.x server
 
 * SimpleSAMLPHP
-The vhost must have a running and configured version of SimpleSamlPHP installed. SimpleSAMLphp is used to Authenticate users who want to use the form.
-Configuration files for simplesaml are included in the directory simplesamlphp.local, but must be copied in appropriate locations (/var/simplesamlphp by default),
- note that confog.php must be set acording local preferences and is nog provided
+The vhost must have a running and configured version of SimpleSamlPHP installed. SimpleSAMLphp is used to Authenticate 
+users who want to use the form. Configuration files for simplesaml are included in the directory simplesamlphp.local, 
+but must be copied in appropriate locations (/var/simplesamlphp by default),  note that confog.php must be set according
+to local preferences and is not provided
 
 * SURFnet style-guide
 The SURFnet styleguide is used to take care of the layout. It most be downloaded from Github.
 It can be found at https://github.com/SURFnet/SURFnet-styleguide
 
 * SamlmetaJS
-The samlMetaJS Javascript library is used to allow users to validate and adjust their metadata files. The SP form uses the stock version, overwriting functionality using contents of SamlmetaJS.local directory when required.
+The samlMetaJS Javascript library is used to allow users to validate and adjust their metadata files. 
+The SP form uses the stock version, overwriting functionality using contents of SamlmetaJS.local directory when required.
 
 * geshi
 Is a php libary for formatting source code, in our case XML.
