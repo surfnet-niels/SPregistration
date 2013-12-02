@@ -12,7 +12,7 @@ $from_email = "surfconext-beheer@surfnet.nl";
 // Require user AuthN (true/false)
 // If true, Assumes simplesamlphp to be installed
 // Turn it of for easy dev work on form
-$requireAuthN = true;
+$requireAuthN = false;
 
 if ($requireAuthN) {
 	require_once('../../../simplesamlphp/lib/_autoload.php');
@@ -20,9 +20,6 @@ if ($requireAuthN) {
 	$as = new SimpleSAML_Auth_Simple('default-sp');
 	$as->requireAuth();
 }
-
-//var_dump($as->getAttributes());
-
 
 if ($requireAuthN) {
 	$attributes = $as->getAttributes();
@@ -35,9 +32,6 @@ if ($requireAuthN) {
 	$email = "john.doe@example.org";
 	$home_org = "example.org";
 }
-
-// start a session
-session_start();
 
 // Page flow and headers
 $pageHeaders = array(	"1" => "Introduction", 
@@ -69,8 +63,12 @@ if (isset($_POST["page"])) {
 }
 
 // Each time a form is posted, key and value will be stored in formContent. 
-if (!isset($_SESSION["formContent"])) $_SESSION["formContent"] = array();
-if (!isset($formContent)) $formArray = array();
+if (!isset($_SESSION["formContent"])) {
+    $_SESSION["formContent"] = array();
+}
+if (!isset($formContent)) {
+    $formArray = array();
+}
 
 //$formContent = $_SESSION["formContent"];
 //echo "<br>Processing Form Content......<br>";
@@ -102,6 +100,4 @@ if (!isset($_SESSION['count'])) {
 }
 
 ?>
-<div style="float: middle; min-height: 50px" title="header">
-<!-- <div style="float: left" title="purpose">Page: <?php echo $pagenr ?></div> -->
-</div>
+
