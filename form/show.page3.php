@@ -1,7 +1,7 @@
 <section class="content">
 
-<div class="content">
 <h2><?php echo $pageHeaders[$pagenr]?></h2>
+<div class="content">
     <form action="index.php" method="post">
     	<input type="hidden" name="page" value="301">
 <!-- Metadata URL -->
@@ -18,16 +18,15 @@
 		</p>
 	</div>
 	
-	<div style="float: left; width: 70%" title="Metadata">
-		<p>Metadata URL:<br>
-		<input type="text" id="metadataURL" name="metadataURL" style="width: 80%"/><br>
-		<input type="submit" value="Submit URL" style="float: left" ></p>
+	<div>
+		<p>Metadata URL:</p>
+		<input type="text" id="metadataURL" name="metadataURL" style="width: 80%"/>
+		<button type="submit" class="btn btn-primary block">Submit URL</button>
 	</div>
-	<br/>
-	<div style="float: left; width: 70%" title="SURFmarket">	
-		<p>Metadata XML:<br>
-		<textarea name="metadataXML" id="metadataXML" style="width: 80%; height: 500px"></textarea><br>
-            <button type="submit" class="btn btn-primary left">Submit XML</button>
+	<div>	
+		<p>Metadata XML:</p>
+		<textarea name="metadataXML" id="metadataXML" style="width: 80%; height: 500px"></textarea>
+		<button type="submit" class="btn btn-primary block">Submit XML</button>
 
 	</div>
 </fieldset>

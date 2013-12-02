@@ -1,3 +1,8 @@
+<?php 
+// start a session
+session_start();
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -30,8 +35,12 @@
         <!-- Non-bootstrap Styling -->
         <link rel="stylesheet" href="./css/sp-registration.css">
 
+        <!-- Non-bootstrap Styling -->
+        <link rel="stylesheet" href="./css/sp-registration.css">
 
-	
+        <script src="../SURFnet-styleguide/js/jquery/jquery-1.7.2.min.js"></script>
+        <script src="./js/sp-registration.js"></script>
+
 </head>
 <body>
 
@@ -61,7 +70,8 @@ switch ($pagenr){
    		break;
     	
    	case 201:
-   		include 'process.page2.php';
+//   		include 'process.page2.php';
+   		include 'show.page3.php';
    		break;
     	
    	case 301:
@@ -81,7 +91,6 @@ switch ($pagenr){
     	break;
     
 }
-
 
 include 'footer.php';
 

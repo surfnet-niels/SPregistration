@@ -12,4 +12,24 @@ section.content, footer {
         margin-left: 15px;
         margin-right: 15px;
 
-    }}
+    }
+}
+
+.block {
+    display: block;
+    margin-bottom: 15px;
+}
+
+label {
+    vertical-align: bottom;
+}
+
+input[type="radio"] {
+    margin: 3px 5px 3px 0px;
+}
+
+p.warning {
+    color: rgb(189, 54, 47);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
