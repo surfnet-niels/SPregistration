@@ -29,7 +29,7 @@
         Note that this form cannot be saved while working on it. If you leave the SP form page your work will be lost. This means that it is advisable
         to first collect all the necessary information before completing and sending it.
         <br>
-        For more information see the <a href="https://wiki.surfnetlabs.nl/display/surfconextdev/Documentation+for+Service+Providers">SURFconext service provider wiki page</a>.
+        For more information see the <a target="_blank" href="https://wiki.surfnetlabs.nl/display/surfconextdev/Documentation+for+Service+Providers">SURFconext service provider wiki page</a>.
     </p>
 
     <form action="index.php" method="post">

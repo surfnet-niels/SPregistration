@@ -330,7 +330,9 @@ var SAMLmetaJS = {};
 
 		$("div#rawmetadata button.prettify").click(function(e) {
 			e.preventDefault();
-			$(node).val(SAMLmetaJS.XML.prettifyXML($(node).val()));
+            if ($(node).val().trim() != "") {
+                $(node).val(SAMLmetaJS.XML.prettifyXML($(node).val()));
+            }
 		});
 		$("div#rawmetadata button.wipe").click(function(e) {
 			e.preventDefault();

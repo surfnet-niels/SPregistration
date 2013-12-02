@@ -1,7 +1,3 @@
-<?php 
-$confirmedMetadata = $_POST["confirmedMetadata"];
-?>
-
 
 <!-- Include Google maps to use with SAMLmetaJS locaiton plugin -->
 <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>  -->
@@ -37,39 +33,8 @@ $confirmedMetadata = $_POST["confirmedMetadata"];
 	<script type="text/javascript" src="SAMLmetaJS/samlmeta.info-organization-contact-certs-saml2sp-attributes.min.js"></script> 
 -->
 
-<link type="text/css" href="../SAMLmetaJS/samlmetajs/css/samlmetajs.css" rel="stylesheet" />
+<link type="text/css" href="../SAMLmetaJS.local/samlmetajs/css/samlmetajs.css" rel="stylesheet" />
 	
-<script type="text/javascript">
-    $(document).ready(function(){
-		var options = {
-			// 'ruleset': {
-			// 	'noentityname': 2,
-			// 	'noentitydescr': 2,
-			// 	'noorganization': 2,
-			// 	'nocontacts': 2
-			//	},
-			'showValidation': true,
-			'showValidationLevel': {
-				'info': false,
-				'ok': false,
-				'warning': true,
-				'error': true
-			},
-		};
-        // Copy provided metadata to SAMLmetaJS form
-        var metadataValue = $('textarea#providedmetadata').val();
-        $("textarea#metadata").val(metadataValue);
-
-        $("textarea#metadata").SAMLmetaJS(options);
-
-     	// Trigger the prettify button
-        $("div#rawmetadata button.prettify").trigger( "click" );
-		// Trigger the validate button
-        $("div#rawmetadata button.validate").trigger( "click" );
-        
-    });
-</script>
-
 <section class="content">
 <h2><?php echo $pageHeaders[$pagenr]?></h2>
 <div class="content">
@@ -85,12 +50,12 @@ $confirmedMetadata = $_POST["confirmedMetadata"];
 		</p>
 		
 	</div>
-	<div style="float: left; width: 70%" title="Metadata validation and editor">
+	<div title="Metadata validation and editor">
 		<textarea name="metadata" id="metadata"style="width: 100%; height: 600px"></textarea>
 	</div>
 	
 </fieldset>	
-<textarea name="metadata" id="providedmetadata" style="display:none;"><?php echo $confirmedMetadata ?></textarea>
+<textarea name="providedmetadata" id="providedmetadata" style="display:none;"><?php echo $confirmedMetadata ?></textarea>
     <button type="submit" class="btn btn-primary">Continue</button>
 
 </form>

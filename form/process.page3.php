@@ -5,12 +5,17 @@ $metadataXML = $_POST["metadataXML"];
 $XMLerror = false;
 $inputMethode = "none";
 
-if ((strlen($metadataURL)>0) && (strlen($metadataXML)>0)) {
+$skipMetaData = isset($_POST["skipMetaData"]);
+if ($skipMetaData) {
+    $metadataFile = '';//file_get_contents("./metadata/bare-sp-metadata.xml");
+}
+
+if (!$skipMetaData && (strlen($metadataURL)>0) && (strlen($metadataXML)>0)) {
 	$XMLerror = true;
 	$errorMSG = "Please use only one means of providing Metadata";
 };
 
-if ((strlen($metadataURL)<=0) && (strlen($metadataXML)<=0)) {
+if (!$skipMetaData && (strlen($metadataURL)<=0) && (strlen($metadataXML)<=0)) {
 	$XMLerror = true;
 	$errorMSG = "Please use at least one means of providing Metadata";
 };
@@ -21,60 +26,42 @@ if ((strlen($metadataURL)>0) && (strlen($metadataXML)<=0)) {
 	$inputMethode = "XML";
 };
 
-if ($inputMethode == "URL") {
+if (!$skipMetaData && $inputMethode == "URL") {
 	
 	// Try to download the XML
 	try {
 		$metadataFile = file_get_contents($metadataURL);
 	} catch (Exception $e) {
 		$XMLerror = true;
-		$errorMSG = 'Something is wrong with the URL you provided. The error message was:<br/>'.  $e->getMessage(). '<br/>';
+		$errorMSG = 'Something is wrong with the URL you provided. ' . $metadataURL . ' is not a valid XML endpoint';
 	};
 	// Add metadata validation functions here
 
 };
 
-if ($inputMethode == "XML") {
+if (!$skipMetaData && $inputMethode == "XML") {
 	$metadataFile = $metadataXML;
 	
 	// Add metadata validation functions here
 }
 
-
-include_once '../geshi/geshi.php';
-$geshi = new GeSHi(beautifyXML($metadataFile), "XML");
-
 ?>
 
-<section class="content">
-<h2><?php echo $pageHeaders[$pagenr]?></h2>
-<div class="content">
-<form action="index.php" method="post">
 <?php if($XMLerror) {?>
+<section class="content">
+    <h2><?php echo $pageHeaders[$pagenr]?></h2>
+    <div class="content">
     <h3>Error</h3>
     <p>
 		<?php echo $errorMSG;?>
     </p>
-    <input type="button" value="Change" onClick="window.history.back();">
-<?php 
+    <a href="index.php?page=3" class="btn btn-primary"">Go back</a>
+    </div>
+    </section>
+<?php
 	} else {
+        $confirmedMetadata = $metadataFile;
+        include 'show.page4.php';
+    }
 ?>
-	<p>
-		Please confirm below is the metadata you want to use
-    </p>
-	<!-- <textarea name="submittedMetadata" id="submittedMetadata" style="width: 80%; height: 500px">  -->
-		<?php 
-			//print(beautifyXML($metadataFile)); 
-			print($geshi->parse_code());
-		?>
-	<!-- </textarea><br> -->
-	
-	<textarea name="confirmedMetadata" style="display:none;"><?php echo $metadataFile;?></textarea>
-	<input type="hidden" name="page" value="4">
-    <button type="submit" class="btn btn-primary">Confirm</button>
-	    	
-	    	
-<?php };?>	    	
-	</form>
-	</div>
-</section>
+

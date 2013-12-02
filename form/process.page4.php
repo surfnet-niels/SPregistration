@@ -3,9 +3,8 @@ $editedMetadata = $_POST["metadata"];
 
 include_once '../geshi/geshi.php';
 $geshi = new GeSHi(beautifyXML($editedMetadata), "XML");
-//$geshi = new GeSHi($editedMetadata, "XML");
 
-$formArray = $_SESSION["formContent"]["ConnectionDetails"];
+$connectionDetails = $_SESSION["formContent"]["ConnectionDetails"];
 $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 
 //d($_SESSION);
@@ -20,7 +19,7 @@ $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 			<!-- Contract -->
 			<fieldset id="contract">
 				<legend>Service Type & Licencing</legend>
-					<div>The service type and licence regime I wish use: <b><?php echo $formArray["ServiceType"];?></b>
+					<div>The service type and licence regime I wish use: <b><?php echo htmlspecialchars($connectionDetails["ServiceType"]);?></b>
 					</div>
 			</fieldset>
 			<br/>
@@ -32,7 +31,7 @@ $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 					Purpose of the service:
 				</div>
 				<div style="float: left; width: 70%" title="Purpose">
-					<b><?php echo $formArray["Purpose"];?></b>
+					<b><?php echo htmlspecialchars($connectionDetails["Purpose"]);?></b>
 				</div>
 			</fieldset>
 			<br/>
@@ -42,7 +41,7 @@ $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 				<legend>Experience</legend>
 				<div>
 					<p>Experience with setting up and maintaining a SAML2
-					based service provider: <b><?php echo $formArray["Experience"];?></b> 
+					based service provider: <b><?php echo htmlspecialchars($connectionDetails["Experience"]);?></b>
 				</div>
 			</fieldset>
 			<br/>
@@ -54,7 +53,7 @@ $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 					<p>Current or launching customers for your service:
 				</div>
 				<div style="float: left; width: 70%" title="Customers">
-					<b><?php echo $formArray["Customers"];?></b> 
+					<b><?php echo htmlspecialchars($connectionDetails["Customers"]);?></b>
 				</div>
 			</fieldset>
 			<br/>
@@ -64,7 +63,7 @@ $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 				<legend>Test or Production</legend>
 				<div>
 					<p>
-						Test or a Production connection: <b><?php echo $formArray["State"];?></b> 
+						Test or a Production connection: <b><?php echo htmlspecialchars($connectionDetails["State"]);?></b>
 					</p>
 				</div>
 			</fieldset>
@@ -80,7 +79,7 @@ $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 					
 				</div>
 				<div style="float: left; width: 70%" title="Planning">
-					<b><?php echo $formArray["Planning"];?></b> 
+					<b><?php echo htmlspecialchars($connectionDetails["Planning"]);?></b>
 				</div>
 			</fieldset>
 			<br/>
@@ -88,17 +87,19 @@ $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 			<!-- Metadata -->
 			<fieldset id="state">
 				<legend>SAML Metadata</legend>
-				<div>
-					<p>
-						Use the SAML2 Metadata URL displayed below
-					</p>
-					
-				</div>
-				<div>
-					<p>
-						<b><?php echo $metadataURL;?></b> 
-					</p>
-				</div>
+                <?php if ($metadataURL): ?>
+                    <div>
+                        <p>
+                            Use the SAML2 Metadata URL displayed below
+                        </p>
+
+                    </div>
+                    <div>
+                        <p>
+                            <b><?php echo $metadataURL;?></b>
+                        </p>
+                    </div>
+                <?php endif; ?>
 				<div>
 					<p>
 					<?php 
@@ -109,10 +110,9 @@ $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 			</fieldset>
 			<br/>
 
-	<input type="hidden" name="page" value="501">
-	<input type="submit" value="Confirm and Send">
-	<input type="button" value="Change" onClick="window.history.back();">
-	    	
+    	<input type="hidden" name="page" value="501">
+        <button type="submit" class="btn btn-primary">Confirm and Send</button>
+        <a href="index.php?page=1" class="btn btn-primary"">Change</a>
 	</form>
 	</div>
 </section>

@@ -5,7 +5,7 @@
 			<!-- Contract -->
 			<fieldset id="contract">
 				<legend>Service Type & Licencing</legend>
-					<div>The service type and licence regime I wish use: <b><?php echo $formArray["ServiceType"];?></b>
+					<div>The service type and licence regime I wish use: <b><?php echo $connectionDetails["ServiceType"];?></b>
 					</div>
 			</fieldset>
 			<br/>
@@ -17,7 +17,7 @@
 					Purpose of the service:
 				</div>
 				<div style="float: left; width: 70%" title="Purpose">
-					<b><?php echo $formArray["Purpose"];?></b>
+					<b><?php echo $connectionDetails["Purpose"];?></b>
 				</div>
 			</fieldset>
 			<br/>
@@ -27,7 +27,7 @@
 				<legend>Experience</legend>
 				<div>
 					<p>Experience with setting up and maintaining a SAML2
-					based service provider: <b><?php echo $formArray["Experience"];?></b> 
+					based service provider: <b><?php echo $connectionDetails["Experience"];?></b>
 				</div>
 			</fieldset>
 			<br/>
@@ -39,7 +39,7 @@
 					<p>Current or launching customers for your service:
 				</div>
 				<div style="float: left; width: 70%" title="Customers">
-					<b><?php echo $formArray["Customers"];?></b> 
+					<b><?php echo $connectionDetails["Customers"];?></b>
 				</div>
 			</fieldset>
 			<br/>
@@ -49,7 +49,7 @@
 				<legend>Test or Production</legend>
 				<div>
 					<p>
-						Test or a Production connection: <b><?php echo $formArray["State"];?></b> 
+						Test or a Production connection: <b><?php echo $connectionDetails["State"];?></b>
 					</p>
 				</div>
 			</fieldset>
@@ -65,7 +65,7 @@
 					
 				</div>
 				<div style="float: left; width: 70%" title="Planning">
-					<b><?php echo $formArray["Planning"];?></b> 
+					<b><?php echo $connectionDetails["Planning"];?></b>
 				</div>
 			</fieldset>
 

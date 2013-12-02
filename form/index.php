@@ -50,7 +50,7 @@ include 'header.php';
 
 switch ($pagenr){
     case 1:
-		include 'show.page1.php';
+		include 'show.page2.php';
         break;
         
     case 2:

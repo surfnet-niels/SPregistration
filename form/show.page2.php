@@ -1,3 +1,7 @@
+<?php
+    $connectionDetails = isset($_SESSION['formContent']['ConnectionDetails']) ? $_SESSION['formContent']['ConnectionDetails'] : array();
+?>
+
 <section class="content">
 <h2><?php echo $pageHeaders[$pagenr];?></h2>
 <div class="content">
@@ -33,10 +37,18 @@
 				</div>
 				<section id="service_type">
 					<p>Please provide us with some information on the service type and licence regime you wish use:</p>
-						<label for="Campus"><input name="ServiceType" type="radio" id="Campus" name="Campusr" value="Campus"/>I am a SURFnet member institution and want to add a service for my own (campus) users</label>
-                        <label for="Collaboration"><input name="ServiceType" type="radio" id="Collaboration" name="Collaboration" value="Collaboration"/>I am a SURFnet member institution and want to add a service to share for my own and other institutions users</label>
-                        <label for="Commercial"><input name="ServiceType" type="radio" id="Commercial" name="CommercialSP" value="CommercialSP"/>Commercial Service Provider</label>
-                        <label for="Other"><input name="ServiceType" type="radio" id="Other" name="Other" value="Other"/>Other, please describe what you want a part of the service description below.</label>
+						<label for="Campus">
+                            <input name="ServiceType" type="radio" id="Campus" name="Campus" value="Campus"
+                                <?php echo (isset($connectionDetails['ServiceType']) && $connectionDetails['ServiceType'] === 'Campus') ? 'checked' : '';?> />I am a SURFnet member institution and want to add a service for my own (campus) users</label>
+                        <label for="Collaboration">
+                            <input name="ServiceType" type="radio" id="Collaboration" name="Collaboration" value="Collaboration"
+                                <?php echo (isset($connectionDetails['ServiceType']) && $connectionDetails['ServiceType'] === 'Collaboration') ? 'checked' : '';?> />I am a SURFnet member institution and want to add a service to share for my own and other institutions users</label>
+                        <label for="Commercial">
+                            <input name="ServiceType" type="radio" id="Commercial" name="CommercialSP" value="CommercialSP"
+                                <?php echo (isset($connectionDetails['ServiceType']) && $connectionDetails['ServiceType'] === 'CommercialSP') ? 'checked' : '';?> />Commercial Service Provider</label>
+                        <label for="Other">
+                            <input name="ServiceType" type="radio" id="Other" name="Other" value="Other"
+                                <?php echo (isset($connectionDetails['ServiceType']) && $connectionDetails['ServiceType'] === 'Other') ? 'checked' : '';?>/>Other, please describe what you want a part of the service description below.</label>
 				</section>
 			</fieldset>
 			<br/>
@@ -52,7 +64,8 @@
 				</div>
 				<div>
 					<p>Please describe the purpose of the service:</p>
-					<textarea name="Purpose" id="purpose" style="width: 80%; height: 200px"></textarea>
+					<textarea name="Purpose" id="purpose"
+                        style="width: 80%; height: 200px"><?php echo isset($connectionDetails['Purpose']) ? $connectionDetails['Purpose'] : '' ; ?></textarea>
 				</div>
 			</fieldset>
 
@@ -66,8 +79,10 @@
 				</div>
 				<section id="experience">
 					<p>Is there any experience with setting up and maintaining a SAML2 based service provider?</p>
-					<label for="yes"><input name="Experience" type="radio" id="yes" name="yes" value="yes"/>Yes, I have previously installed or I currently maintain a SAML2 based Service Provider</label>
-                    <label for="no"><input name="Experience" type="radio" id="no" name="no" value="no"/>No experience with SAML2 SP software</label>
+					<label for="yes"><input name="Experience" type="radio" id="yes" name="yes" value="yes"
+                            <?php echo (isset($connectionDetails['Experience']) && $connectionDetails['Experience'] === 'yes') ? 'checked' : '';?> />Yes, I have previously installed or I currently maintain a SAML2 based Service Provider</label>
+                    <label for="no"><input name="Experience" type="radio" id="no" name="no" value="no"
+                            <?php echo (isset($connectionDetails['Experience']) && $connectionDetails['Experience'] === 'no') ? 'checked' : '';?> />No experience with SAML2 SP software</label>
 				</section>
 			</fieldset>
 
@@ -81,7 +96,8 @@
 				</div>
 				<div>
 					<p>Do you have any current or launching customers for your service? If so, please list these below</p>
-					<textarea name="Customers" id="customers" style="width: 80%; height: 200px"></textarea>
+					<textarea name="Customers" id="customers"
+                              style="width: 80%; height: 200px"><?php echo isset($connectionDetails['Customers']) ? $connectionDetails['Customers'] : '' ; ?></textarea>
 				</div>
 			</fieldset>
 
@@ -101,12 +117,14 @@
 				</div>
 				<section id="state">
 					<p>Are you requesting a Test or a Production connection?</p>
-					<label for="test"><input name="State" type="radio" id="test" name="test" value="test"/>I want to make a test connection</label>
-					<label for="production"><input name="State" type="radio" id="production" name="production" value="production"/>I want to make a production connection</label>
+					<label for="test"><input name="State" type="radio" id="test" name="test" value="test"
+                            <?php echo (isset($connectionDetails['State']) && $connectionDetails['State'] === 'test') ? 'checked' : '';?> />I want to make a test connection</label>
+					<label for="production"><input name="State" type="radio" id="production" name="production" value="production"
+                            <?php echo (isset($connectionDetails['State']) && $connectionDetails['State'] === 'production') ? 'checked' : '';?>/>I want to make a production connection</label>
 				</section>
 			</fieldset>
 			<br/>
-			
+
 			<!--  Deadlines -->
 			<fieldset>
 				<legend>Planning & Deadlines</legend>
@@ -122,7 +140,7 @@
 				</div>
 				<section>
 					<p>When do you want your service to be connected?</p>
-					<textarea name="Planning" id="planning" style="width: 80%; height: 200px"></textarea>
+					<textarea name="Planning" id="planning" style="width: 80%; height: 200px"><?php echo isset($connectionDetails['Planning']) ? $connectionDetails['Planning'] : '' ; ?></textarea>
 				</section>
 			</fieldset>
 

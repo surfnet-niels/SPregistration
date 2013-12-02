@@ -33,3 +33,7 @@ p.warning {
     font-size: 1.1em;
     margin-top: 5px;
 }
+
+button.btn-primary {
+    margin-top: 5px;
+}
