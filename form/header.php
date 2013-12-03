@@ -12,7 +12,7 @@ $from_email = array("surfconext-beheer@surfnet.nl" => "SURFconext Beheer");
 // Require user AuthN (true/false)
 // If true, Assumes simplesamlphp to be installed
 // Turn it of for easy dev work on form
-$requireAuthN = true;
+$requireAuthN = false;
 
 if ($requireAuthN) {
 	require_once('../../../simplesamlphp/lib/_autoload.php');
