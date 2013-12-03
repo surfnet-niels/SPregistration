@@ -160,7 +160,6 @@ function sendMail2($to, $from, $subject, $text, $html, $attachement, $mimetype) 
    // $message->addPart($text, 'text/plain');
 
     //$message->attach(Swift_Attachment::newInstance($attachement, null, $mimetype));
-    var_dump($message);exit;
     $failedRecipients = array();
     $swift->send($message, $failedRecipients);
 
