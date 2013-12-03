@@ -157,7 +157,7 @@ function sendMail2($to, $from, $subject, $text, $html, $attachement, $mimetype) 
     $message->setFrom($from);
     $message->setBody($html, 'text/html');
     $message->setTo($to);
-    $message->addPart($text, 'text/plain');
+   // $message->addPart($text, 'text/plain');
 
     //$message->attach(Swift_Attachment::newInstance($attachement, null, $mimetype));
     $failedRecipients = array();

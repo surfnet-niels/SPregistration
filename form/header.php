@@ -3,16 +3,15 @@
 // Decent debugging:
 //require '../../kint/Kint.class.php';
 include_once 'functions.php';
-
 // Email is send from and to
-$to_email = array("femke.morsch@surfnet.nl", "surfconext-beheer@surfnet.nl"); //,
+$to_email = array("lucas@vanlierop.org","femke.morsch@surfnet.nl"); //,
 $from_email = array("surfconext-beheer@surfnet.nl" => "SURFconext Beheer");
 
 
 // Require user AuthN (true/false)
 // If true, Assumes simplesamlphp to be installed
 // Turn it of for easy dev work on form
-$requireAuthN = true;
+$requireAuthN = false;
 
 if ($requireAuthN) {
 	require_once('../../../simplesamlphp/lib/_autoload.php');
