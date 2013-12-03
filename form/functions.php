@@ -160,8 +160,11 @@ function sendMail2($to, $from, $subject, $text, $html, $attachement, $mimetype) 
     $message->addPart($text, 'text/plain');
 
    // $message->attach(Swift_Attachment::newInstance()fromPath('my-document.pdf'))
+    $failedRecipients = array();
+    $rs = $swift->send($message, $failedRecipients);
+    var_dump($failedRecipients);
+    var_dump($rs);
 
-    $swift->send($message);
 
 }
 
