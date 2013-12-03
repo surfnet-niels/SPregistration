@@ -49,7 +49,6 @@
 		<p>Please walk through the provided tabs and and correct the errors as indicated. If all errors are solved only then continue.</p>
     </div>
     <button type="submit" class="btn btn-primary block">Continue</button>
-
 	<div title="Metadata validation and editor">
 		<textarea name="metadata" id="metadata"style="width: 100%; height: 600px"></textarea>
 	</div>
