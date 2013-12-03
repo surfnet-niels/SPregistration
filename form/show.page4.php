@@ -45,18 +45,17 @@
 <fieldset id="metadatavalidation">
 	<legend>Metadata validation and editor</legend>
 	<div>
-		<p>The Metadata validator and editor detects errors and ommitions in the provided metadata, as indicated by the exclamation signs.
-		Please walk through the provided tabs and and correct the errors as indicated<br>If no error remain select continue to proceed.
-		</p>
-		
-	</div>
+		<p>The Metadata validator and editor detects errors and omissions in the provided metadata, as indicated by the following highlighted missing metadata.</p>
+		<p>Please walk through the provided tabs and and correct the errors as indicated. If all errors are solved only then continue.</p>
+    </div>
+    <button type="submit" class="btn btn-primary block">Continue</button>
+
 	<div title="Metadata validation and editor">
 		<textarea name="metadata" id="metadata"style="width: 100%; height: 600px"></textarea>
 	</div>
 	
 </fieldset>	
 <textarea name="providedmetadata" id="providedmetadata" style="display:none;"><?php echo $confirmedMetadata ?></textarea>
-    <button type="submit" class="btn btn-primary">Continue</button>
 
 </form>
 </div>

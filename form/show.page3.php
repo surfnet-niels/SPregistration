@@ -1,5 +1,6 @@
 <?php
     $confirmedMetadata = isset($_SESSION['formContent']['confirmedMetadata']) ? $_SESSION['formContent']['confirmedMetadata'] : array();
+    $metadataResult = isset($confirmedMetadata['metadataXMLresult']) ? $confirmedMetadata['metadataXMLresult'] : false;
 ?>
 <section class="content">
 
@@ -33,7 +34,7 @@
 	</div>
 	<div>	
 		<p>Metadata XML:</p>
-		<textarea name="metadataXML" id="metadataXML" style="width: 80%; height: 500px"><?php echo isset($confirmedMetadata['metadataXML']) ? $confirmedMetadata['metadataXML'] : ''; ?></textarea>
+		<textarea name="metadataXML" id="metadataXML" style="width: 80%; height: 500px"><?php echo (isset($confirmedMetadata['metadataXML']) && !$metadataResult) ? $confirmedMetadata['metadataXML'] : ($metadataResult ? $metadataResult : ''); ?></textarea>
 		<button id="submit_metadata_xml"  type="submit" class="btn btn-primary block">Submit XML</button>
 
 	</div>

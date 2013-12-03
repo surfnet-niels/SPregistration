@@ -74,7 +74,7 @@
 			endpointHTML.push('<input class="datafield-responselocation" type="text" name="' + randID + '-locationresponse-name" id="contact-' + randID + '-locationresponse" value="' + (endpoint.ResponseLocation || '') + '" />');
 			endpointHTML.push('</div>');
 
-			endpointHTML.push('<button style="display: block; clear: both" class="remove">Remove</button>');
+			endpointHTML.push('<button style="display: block; clear: both" class="remove btn">Remove</button>');
 			endpointHTML.push('</fieldset>');
 
 			$(endpointHTML.join('')).appendTo("div#endpoints > div.content")

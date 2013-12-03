@@ -62,6 +62,13 @@ if (isset($_POST["page"])) {
 	$pagenr  = 1;
 }
 
+// We can also directly go to page 3 with a metadata url
+if (isset($_GET["metadata-url"])) {
+    $pagenr = 3;
+    $_SESSION['formContent']['confirmedMetadata']['metadataURL'] = $_GET["metadata-url"];
+    $_SESSION['urlProvided'] = true;
+}
+
 // Each time a form is posted, key and value will be stored in formContent. 
 if (!isset($_SESSION["formContent"])) {
     $_SESSION["formContent"] = array();

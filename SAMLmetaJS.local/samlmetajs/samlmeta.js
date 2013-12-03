@@ -279,9 +279,9 @@ var SAMLmetaJS = {};
 			SAMLmetaJS.pluginEngine.execute('addTab', [pluginTabs]);
 
 			metatab.append('<div>' +
-						   '<button class="prettify">Pretty format</button>' +
-						   '<button class="validate">Validate</button>' +
-						   '<button class="wipe">Wipe</button>' +
+						   '<button class="prettify btn">Pretty format</button>' +
+						   '<button class="validate btn">Validate</button>' +
+						   '<button class="wipe btn">Wipe</button>' +
 						   '</div>');
 
 			tabnode.prepend('<ul>' +

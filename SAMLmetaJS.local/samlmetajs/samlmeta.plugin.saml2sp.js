@@ -69,7 +69,7 @@
 				'<input class="datafield-responselocation" type="text" name="' + randID + '-locationresponse-name" id="contact-' + randID + '-locationresponse" value="' + (endpoint.ResponseLocation || '') + '" />' +
 			'</div>';
 
-		endpointHTML += '<button style="display: block; clear: both" class="remove">Remove</button>' +
+		endpointHTML += '<button style="display: block; clear: both" class="btn remove">Remove</button>' +
 			'</fieldset>';
 
 		$(endpointHTML).appendTo("div#saml2sp > div.content").find('button.remove').click(function(e) {

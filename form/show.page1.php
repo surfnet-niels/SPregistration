@@ -1,4 +1,3 @@
-
 <section class="content">
 <h2><?php echo $pageHeaders[$pagenr]?></h2>
 <div class="content">

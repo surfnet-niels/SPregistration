@@ -1,17 +1,18 @@
 /* Generic Section */
 div#tabs fieldset {
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     margin-bottom: 15px;
     padding: 10px;
 }
 div#tabs fieldset legend {
 	color: #999;
-    border : inherit;
+    border : none;
     margin: 0px;
     padding: 5px 2px;
 	font-size: small;
 	background-repeat: no-repeat;
 	background-position: left;
+    line-height: 0px;
 
 }
 
@@ -46,7 +47,7 @@ div#tabs button {
 div.ui-tabs-panel ul.errors {
 	margin: 1em;
 	padding-left: 2em;
-	list-style-image: url(../icons/exclamation.png);
+	color: rgb(189, 54, 47);
 }
 
 /* Generic field styles */
@@ -74,23 +75,23 @@ div.ui-tabs-panel ul.errors {
 
 /* Verification box */
 div#tabs div#samlmetajs_testresults div.samlmetajs_testentry {
-	margin: 2px;
-	padding: 2px 1em 0px 20px;
-	background-repeat:no-repeat;
+	padding: 5px;
 	min-height: 16px;
 	border-top: 1px solid #ddd;
 }
 div#tabs div#samlmetajs_testresults div.samlmetajs_testentry.samlmetajs_testvalue1 {
-	background-image: url('../icons/accept.png');
+	background-image: none;
 }
 div#tabs div#samlmetajs_testresults div.samlmetajs_testentry.samlmetajs_testvalue0.samlmetajs_sigvalue1 {
-	background-image: url('../icons/error.png');
+    background-image: none;
+	color: rgb(189, 54, 47);
 }
 div#tabs div#samlmetajs_testresults div.samlmetajs_testentry.samlmetajs_testvalue0.samlmetajs_sigvalue2 {
-	background-image: url('../icons/exclamation.png');
+    background-image: none;
+    color: rgb(189, 54, 47);
 }
 div#tabs div#samlmetajs_testresults div.samlmetajs_testentry.samlmetajs_testvalue2 {
-	background-image: url('../icons/information.png');
+	background-image: none;
 }
 
 
@@ -109,14 +110,14 @@ div#tabs div#info div.infodescrdiv {
 }
 
 div#org fieldset legend, div#info fieldset legend {
-	background-image: url('../icons/information.png');
+	background-image: none;
 }
 div#org fieldset.description legend, div#info fieldset.description legend {
-	background-image: url('../icons/note_edit.png');
+	background-image: none;
 }
 
 div#info fieldset.logo legend {
-	background-image: url('../icons/image.png');
+	background-image: none;
 }
 
 div#tabs div#info div.infologodiv select { width: auto; }
@@ -140,7 +141,7 @@ div#tabs div#info div.infologodiv button { width: auto; }
 /* SAML SP tab */
 
 div#tabs div#endpoints fieldset legend {
-	background-image: url('../icons/bullet_wrench.png');
+	background-image: none;
 }
 
 
@@ -160,13 +161,13 @@ div#tabs div#contact div.contactfield {
 /*	width: 45%;*/
 }
 div#tabs div#contact fieldset legend {
-	background-image: url('../icons/vcard.png');
+	background-image: none;
 }
 
 
 /* Certificates tab */
 
 div#tabs div#certs fieldset legend {
-	background-image: url('../icons/lock.png');
+	background-image: none;
 
 }

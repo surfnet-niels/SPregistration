@@ -34,6 +34,6 @@ p.warning {
     margin-top: 5px;
 }
 
-button.btn-primary {
+button.btn-primary, a.btn-primary  {
     margin-top: 5px;
 }
