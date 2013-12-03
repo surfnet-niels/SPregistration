@@ -5,7 +5,7 @@
 include_once 'functions.php';
 
 // Email is send from and to
-$to_email = array("oharsta@zilverline.com" => "Okke Harsta"); //, femke.morsch@surfnet.nl
+$to_email = array("oharsta@zilverline.com" => "Okke Harsta", "lucas@vanlierop.org"); //, femke.morsch@surfnet.nl
 $from_email = array("surfconext-beheer@surfnet.nl" => "SURFconext Beheer");
 
 
