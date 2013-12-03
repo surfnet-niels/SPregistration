@@ -29,7 +29,7 @@ if ($requireAuthN) {
 	$home_org = $attributes["urn:mace:terena.org:attribute-def:schacHomeOrganization"][0];
 } else {
 	$user = "John Doe";
-	$email = "john.doe@example.org";
+	$email = "oharsta@zilverline.com";
 	$home_org = "example.org";
 }
 
