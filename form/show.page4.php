@@ -45,8 +45,8 @@
 <fieldset id="metadatavalidation">
 	<legend>Metadata validation and editor</legend>
 	<div>
-		<p>The Metadata validator and editor detects errors and ommitions in the provided metadata, as indicated by the exclamation signs.
-		Please walk through the provided tabs and and correct the errors as indicated<br>If no error remain select continue to proceed.
+		<p>The metadata validator and editor detects errors and missing data in the provided metadata.
+		Please walk through the provided tabs and and correct the errors as indicated. If no error remain select continue to proceed.
 		</p>
 		
 	</div>
