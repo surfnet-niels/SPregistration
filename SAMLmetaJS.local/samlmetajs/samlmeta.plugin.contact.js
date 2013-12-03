@@ -41,7 +41,7 @@
 					'<input type="text" name="contact-' + randID + '-email-name" id="contact-' + randID + '-email" value="' + (contact.emailAddress || '')+ '" />' +
 				'</div>' +
 
-				'<button style="display: block; clear: both" class="remove">Remove</button>' +
+				'<button style="display: block; clear: both" class="btnremove btn">Remove</button>' +
 
 			'</fieldset>';
 

@@ -29,7 +29,7 @@
 					'<input type="text" name="entityattr-' + randID + '-values-name" id="entityattr-' + randID + '-values" value="' + (entityattr.values || '') + '" />',
 					'</div>',
 
-					'<button style="display: block; clear: both" class="remove">Remove</button>',
+					'<button style="display: block; clear: both" class="btn remove">Remove</button>',
 
 					'</fieldset>'
 				];

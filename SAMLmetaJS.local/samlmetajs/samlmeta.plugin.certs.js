@@ -71,7 +71,7 @@
 
 			infoHTML.push('<textarea class="certdata newRow" style="" name="' + randID + '-data" id="' + randID + '-data-name">' + (cert || '') + '</textarea>');
 
-			infoHTML.push('<button style="display: block" class="removecert">Remove</button>');
+			infoHTML.push('<button style="display: block" class="removecert btn">Remove</button>');
 			infoHTML.push('</fieldset>');
 
 			$(infoHTML.join(''))

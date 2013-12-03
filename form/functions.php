@@ -147,7 +147,25 @@ function writeFile($filepath, $content){
 	fclose($handle);
 }
 
-function sendMail($to, $from_mail, $from_name, $replyto, $subject, $message, $htmlmessage, $file, $mimetype) {
+function sendMail2($to, $from, $subject, $text, $html, $attachement, $mimetype) {
+    include_once "../Swift-5.0.2/lib/swift_required.php";
+
+
+    $swift = Swift_Mailer::newInstance(Swift_SmtpTransport::newInstance());
+
+    $message = new Swift_Message($subject);
+    $message->setFrom($from);
+    $message->setBody($html, 'text/html');
+    $message->setTo($to);
+    $message->addPart($text, 'text/plain');
+
+   // $message->attach(Swift_Attachment::newInstance()fromPath('my-document.pdf'))
+
+    $swift->send($message);
+
+}
+
+function sendMail($to, $from_mail, $subject, $message, $htmlmessage, $file, $mimetype) {
 	$mail_sent = false;
 	
 	if (strlen($file) != 0) {

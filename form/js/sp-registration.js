@@ -8,6 +8,7 @@ $(function () {
             this.validateAdminInfo();
             this.validateMetaDataInfo();
             this.initializeMetadataWizard();
+            this.showHide();
         },
 
         validateAdminInfo: function () {
@@ -16,7 +17,7 @@ $(function () {
                 return;
             }
 
-            $confirmation.parents('form').submit(function(event){
+            $confirmation.parents('form').submit(function (event) {
 
                 var foundWarning = false;
                 $('p.warning').remove();
@@ -52,11 +53,11 @@ $(function () {
             if ($submit.length == 0) {
                 return;
             }
-            $("form button[type=submit]").click(function() {
+            $("form button[type=submit]").click(function () {
                 $(this).parents("form").attr("sourceButton", $(this).attr('id'));
             });
 
-            $submit.parents('form').submit(function(event){
+            $submit.parents('form').submit(function (event) {
                 if ($(this).attr("sourceButton") === 'skip_meta_data_submit') {
                     return true;
                 }
@@ -72,20 +73,20 @@ $(function () {
 
         },
 
-        appendWarning: function($component, informationType) {
-            var $warning = "<p class='warning'>" + spRegistrationModule.formatRequired(informationType)  + "</p>"
+        appendWarning: function ($component, informationType) {
+            var $warning = "<p class='warning'>" + spRegistrationModule.formatRequired(informationType) + "</p>"
             $($component).append($warning);
             return true;
         },
 
-        formatRequired: function(str) {
+        formatRequired: function (str) {
             if (str) {
-                return this.requiredInput.replace(/{(\d+)}/g,'<em>' + str + '</em>');
+                return this.requiredInput.replace(/{(\d+)}/g, '<em>' + str + '</em>');
             }
             return false;
         },
 
-        initializeMetadataWizard: function() {
+        initializeMetadataWizard: function () {
             if ($('#metadatavalidation').length == 0) {
                 return;
             }
@@ -104,9 +105,17 @@ $(function () {
 
             $("textarea#metadata").SAMLmetaJS(options);
 
-            $("div#rawmetadata button.prettify").trigger( "click" );
-            $("div#rawmetadata button.validate").trigger( "click" );
+            $("div#rawmetadata button.prettify").trigger("click");
+            $("div#rawmetadata button.validate").trigger("click");
 
+            $("button").addClass('btn');
+
+        },
+
+        showHide: function () {
+            $('a.show-hide').click(function () {
+                $(this).next('div').toggle();
+            });
         }
 
     };

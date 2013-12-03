@@ -5,8 +5,8 @@
 include_once 'functions.php';
 
 // Email is send from and to
-$to_email = "surfconext-beheer@surfnet.nl";
-$from_email = "surfconext-beheer@surfnet.nl";
+$to_email = array("oharsta@zilverline.com" => "Okke Harsta"); //, femke.morsch@surfnet.nl
+$from_email = array("surfconext-beheer@surfnet.nl" => "SURFconext Beheer");
 
 
 // Require user AuthN (true/false)
@@ -60,6 +60,13 @@ if (isset($_POST["page"])) {
 	$pagenr = $_GET["page"];
 } else {
 	$pagenr  = 1;
+}
+
+// We can also directly go to page 3 with a metadata url
+if (isset($_GET["metadata-url"])) {
+    $pagenr = 3;
+    $_SESSION['formContent']['confirmedMetadata']['metadataURL'] = $_GET["metadata-url"];
+    $_SESSION['urlProvided'] = true;
 }
 
 // Each time a form is posted, key and value will be stored in formContent. 
