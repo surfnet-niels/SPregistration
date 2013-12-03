@@ -1,6 +1,6 @@
 <?php
 
-$debug = true;
+$debug = false;
 
 $formArray = isset($_SESSION["formContent"]["ConnectionDetails"]) ? $_SESSION["formContent"]["ConnectionDetails"] : array();
 $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
