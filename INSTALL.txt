@@ -35,7 +35,8 @@ The samlMetaJS Javascript library is used to allow users to validate and adjust 
 Is a php libary for formatting source code, in our case XML.
 It can be found at http://sourceforge.net/projects/geshi/files/
 
-
+*
+PHP mail client
 Installation
 =========================================================================================================
 
@@ -54,6 +55,10 @@ git clone https://github.com/andreassolberg/SAMLmetaJS
 * Install geshi
 wget http://sourceforge.net/projects/geshi/files/geshi/GeSHi%201.0.8.11/GeSHi-1.0.8.11.tar.gz/download
 tar xvzf GeSHi-1.0.8.11.tar.gz
+
+Install swiftmailer
+wget http://swiftmailer.org/download_file/Swift-5.0.2.tar.gz
+tar xvzf Swift-5.0.2.tar.gz
 
 
 

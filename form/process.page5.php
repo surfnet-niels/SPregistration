@@ -15,12 +15,6 @@ $ip = $_SERVER["REMOTE_ADDR"];
 $requestid = MD5($metadata . $timestamp . $ip);
 
 
-//Add user to the mail to send a copy
-$to_email .= "," . $email;
-
-$filename = "/tmp/" . uniqid("spForm_") . ".xml";
-
-
 // Fields are split by ;
 // key value pairs by :
 
@@ -89,18 +83,8 @@ $conextdataHTML .= "<div class='infobox' style='border-width: 1px; background-co
 $conextdataHTML .= htmlspecialchars(beautifyXML($metadata));
 $conextdataHTML .= "</pre></div>";
 
-writeFile($filename, $metadata);
-
-$sendok = sendMail($to_email,
-    $from_email,
-    "SPform",
-    "",
-    "[SPregistration] New SP connection request " . $requestid,
-    $conextdataTXT,
-    $conextdataHTML,
-    $filename,
-    "text/xml");
-unlink($filename);
+$to_email[$email] = $user;
+sendMail2($to_email, $from_email, "[SPregistration] New SP connection request " . $requestid, $conextdataTXT, $conextdataHTML, $metadata, "text/xml");
 
 ?>
 <section class="content">

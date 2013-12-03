@@ -5,8 +5,8 @@
 include_once 'functions.php';
 
 // Email is send from and to
-$to_email = "oharsta@zilverline.com"; //, femke.morsch@surfnet.nl
-$from_email = "surfconext-beheer@surfnet.nl";
+$to_email = array("oharsta@zilverline.com" => "Okke Harsta"); //, femke.morsch@surfnet.nl
+$from_email = array("surfconext-beheer@surfnet.nl" => "SURFconext Beheer");
 
 
 // Require user AuthN (true/false)
