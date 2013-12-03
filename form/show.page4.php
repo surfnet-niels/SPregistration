@@ -1,9 +1,3 @@
-<?php 
-$confirmedMetadata = $_POST["confirmedMetadata"];
-?>
-
-
-<div style="float: middle" title="page4content">
 
 <!-- Include Google maps to use with SAMLmetaJS locaiton plugin -->
 <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>  -->
@@ -39,40 +33,9 @@ $confirmedMetadata = $_POST["confirmedMetadata"];
 	<script type="text/javascript" src="SAMLmetaJS/samlmeta.info-organization-contact-certs-saml2sp-attributes.min.js"></script> 
 -->
 
-<link type="text/css" href="../SAMLmetaJS/samlmetajs/css/samlmetajs.css" rel="Stylesheet" />
+<link type="text/css" href="../SAMLmetaJS.local/samlmetajs/css/samlmetajs.css" rel="stylesheet" />
 	
-<script type="text/javascript">
-    $(document).ready(function(){
-		var options = {
-			// 'ruleset': {
-			// 	'noentityname': 2,
-			// 	'noentitydescr': 2,
-			// 	'noorganization': 2,
-			// 	'nocontacts': 2
-			//	},
-			'showValidation': true,
-			'showValidationLevel': {
-				'info': false,
-				'ok': false,
-				'warning': true,
-				'error': true
-			},
-		};
-        // Copy provided metadata to SAMLmetaJS form
-        var metadataValue = $('textarea#providedmetadata').val();
-        $("textarea#metadata").val(metadataValue);
-
-        $("textarea#metadata").SAMLmetaJS(options);
-
-     	// Trigger the prettify button
-        $("div#rawmetadata button.prettify").trigger( "click" );
-		// Trigger the validate button
-        $("div#rawmetadata button.validate").trigger( "click" );
-        
-    });
-</script>
-
-<section>
+<section class="content">
 <h2><?php echo $pageHeaders[$pagenr]?></h2>
 <div class="content">
 
@@ -82,18 +45,17 @@ $confirmedMetadata = $_POST["confirmedMetadata"];
 <fieldset id="metadatavalidation">
 	<legend>Metadata validation and editor</legend>
 	<div>
-		<p>The Metadata validator and editor detects errors and ommitions in the provided metadata, as indicated by the exclamation signs.
-		Please walk through the provided tabs and and correct the errors as indicated<br>If no error remain select continue to proceed.
-		</p>
-		
-	</div>
-	<div style="float: left; width: 70%" title="Metadata validation and editor">
+		<p>The Metadata validator and editor detects errors and omissions in the provided metadata, as indicated by the following highlighted missing metadata.</p>
+		<p>Please walk through the provided tabs and and correct the errors as indicated. If all errors are solved only then continue.</p>
+    </div>
+    <button type="submit" class="btn btn-primary block">Continue</button>
+	<div title="Metadata validation and editor">
 		<textarea name="metadata" id="metadata"style="width: 100%; height: 600px"></textarea>
 	</div>
 	
 </fieldset>	
-<textarea name="metadata" id="providedmetadata" style="display:none;"><?php echo $confirmedMetadata ?></textarea>
-<input type="submit" value="Continue" />
+<textarea name="providedmetadata" id="providedmetadata" style="display:none;"><?php echo $confirmedMetadata ?></textarea>
+
 </form>
 </div>
 </section>

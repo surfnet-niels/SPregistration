@@ -1,144 +1,139 @@
+<?php
+    $connectionDetails = isset($_SESSION['formContent']['ConnectionDetails']) ? $_SESSION['formContent']['ConnectionDetails'] : array();
+?>
 
-<div style="float: middle" title="page2content">
-
-<section>
+<section class="content">
 <h2><?php echo $pageHeaders[$pagenr];?></h2>
 <div class="content">
 
     <form action="index.php" method="post">
     	<input type="hidden" name="page" value="201">
 			<!-- Contract -->
-			<fieldset id="contract">
-				<legend>Contract & Licencing</legend>
+			<fieldset">
+				<legend>Contract & license</legend>
 				<div>
 					<p>
-						Any connection to the SURFconext platform is subject to a SURFconext
-							contract</a>, stating security, data protection and privacy
-						regulations.
-					<p>
+						Any connection to the SURFconext platform is subject to a SURFconext contract, stating security, data protection and privacy regulations.
+					</p>
 					<ul>
-						<li>Institutions that are <a target="top"
-							href="http://www.surf.nl/nl/oversurf/instellingen/Pages/Default.aspx">members
+						<li>Institutions that are <a target="_blank"
+							href="http://www.surf.nl/nl/oversurf/instellingen/Pages/Default.aspx" target="_blank">members
 								of SURFnet</a> can connect (non-commercial) Services for their
 							own users, and/or share services with other institutions.
 							Connecting these services requires no additional contracts if
 							your institution is already acting as an Identity Provider.
 						</li>
-						<li>Commercial Services require a license agreement in addition to
-							the SURFconext contract. Service providers will have to contact
-							the Services team of SURFmarket first. In The Netherlands, <a
-							href="http://www.surfmarket.nl" target="top">SURFmarket</a>
-							negotiates licences on behalf of all Reseach and Education
-							institutions that are <a target="top"
-							href="http://www.surf.nl/nl/oversurf/instellingen/Pages/Default.aspx">members
-								of SURFnet</a>.
+						<li>For Commercial Services a license agreement in addition to
+							the SURFconext contract is required. In The Netherlands, <a
+							href="http://www.surfmarket.nl" target="_blank" target="_blank">SURFmarket</a>
+							negotiates licenses on behalf of Research and Education
+							institutions. Please contact the Services team of SURFmarket first.
 						</li>
 					</ul>
-					</p>
+					<p/>
 				</div>
-				<div style="float: left; width: 70%" title="ServiceType">
-					Please provide us with some information on the service type and licence regime you wish use:<br/>
-						<input name="ServiceType" type="radio" id="Campus" name="Campusr" value="Campus"/>&nbsp;I am a SURFnet member institution and want to add a service for my own (campus) users</br>
-						<input name="ServiceType" type="radio" id="Collaboration" name="Collaboration" value="Collaboration"/>&nbsp;I am a SURFnet member institution and want to add a service to share for my own and other institutions users</br>
-						<input name="ServiceType" type="radio" id="Commercial" name="CommercialSP" value="CommercialSP"/>&nbsp;Commercial Service Provider</br>
-						<input name="ServiceType" type="radio" id="Other" name="Other" value="Other"/>&nbsp;Other, please describe what you want a part of the service description below.</br>
-				</div>
+				<section id="service_type">
+					<p>Please select the service and license type you wish use:</p>
+						<label for="Campus">
+                            <input name="ServiceType" type="radio" id="Campus" name="Campus" value="Campus"
+                                <?php echo (isset($connectionDetails['ServiceType']) && $connectionDetails['ServiceType'] === 'Campus') ? 'checked' : '';?> />I am a SURFnet member institution and want to add a service for my own (campus) users</label>
+                        <label for="Collaboration">
+                            <input name="ServiceType" type="radio" id="Collaboration" name="Collaboration" value="Collaboration"
+                                <?php echo (isset($connectionDetails['ServiceType']) && $connectionDetails['ServiceType'] === 'Collaboration') ? 'checked' : '';?> />I am a SURFnet member institution and want to add a service to share with my own and other institutions users</label>
+                        <label for="Commercial">
+                            <input name="ServiceType" type="radio" id="Commercial" name="CommercialSP" value="CommercialSP"
+                                <?php echo (isset($connectionDetails['ServiceType']) && $connectionDetails['ServiceType'] === 'CommercialSP') ? 'checked' : '';?> />Commercial Service Provider</label>
+                        <label for="Other">
+                            <input name="ServiceType" type="radio" id="Other" name="Other" value="Other"
+                                <?php echo (isset($connectionDetails['ServiceType']) && $connectionDetails['ServiceType'] === 'Other') ? 'checked' : '';?>/>Other</label>
+				</section>
 			</fieldset>
 			<br/>
 
 			<!-- Purpose -->
-			<fieldset id="purpose">
-				<legend>Purpose of the Service</legend>
+			<fieldset>
+				<legend>Purpose of the service</legend>
 				<div>
-					<p>Providing the propose of the service helps us determine the
-						feasibility of connecting your service to SURFconext. In addition
-						we will use the description of the service to weigh the release of
-						attributes (user characteristics) you request.</p>
-				</div>
-				<div style="float: left; width: 70%" title="Purpose">
-					Please describe the purpose of the service
-					<textarea name="Purpose" id="purpose" style="width: 80%; height: 200px"></textarea>
+					<p>Please describe the purpose of the service:</p>
+					<textarea name="Purpose" id="purpose"
+                        style="width: 80%; height: 200px"><?php echo isset($connectionDetails['Purpose']) ? $connectionDetails['Purpose'] : '' ; ?></textarea>
 				</div>
 			</fieldset>
 
 			<!-- Previous Install -->
-			<fieldset id="experience">
-				<legend>Previous Install</legend>
+			<fieldset>
+				<legend>SAML experience</legend>
 				<div>
 					<p>An indication of level of expertise you have with setting up an
-						SAML based service provider helps us to better estimate the amount
-						of support you may require.</p>
+						SAML based service provider helps us to estimate the amount
+						of support you may need.</p>
 				</div>
-				<div style="float: left; width: 70%" title="SURFmarket">
-					Is there any experience with setting up and maintaining a SAML2 based service provider?<br/>
-					<input name="Experience" type="radio" id="yes" name="yes" value="yes"/>&nbsp;Yes, I have previously installed or I currently maintain a SAML2 based Service Provider</br>
-					<input name="Experience" type="radio" id="no" name="no" value="no"/>&nbsp;No experience with SAML2 SP software
-				</div>
+				<section id="experience">
+					<p>Is there any experience with setting up and maintaining a SAML2 based service provider?</p>
+					<label for="yes"><input name="Experience" type="radio" id="yes" name="yes" value="yes"
+                            <?php echo (isset($connectionDetails['Experience']) && $connectionDetails['Experience'] === 'yes') ? 'checked' : '';?> />Yes, I have previously installed or I currently maintain a SAML2 based Service Provider</label>
+                    <label for="no"><input name="Experience" type="radio" id="no" name="no" value="no"
+                            <?php echo (isset($connectionDetails['Experience']) && $connectionDetails['Experience'] === 'no') ? 'checked' : '';?> />No experience with SAML2 SP software</label>
+				</section>
 			</fieldset>
-			<br/>
-			
+
 			<!-- Current or Launching Customers  -->
-			<fieldset id="customers">
-				<legend>Current or Launching Customers</legend>
+			<fieldset>
+				<legend>Current or launching customers</legend>
+
 				<div>
-					<p>Indicating current or launching customers among the SURF member
-						institutions helps us determine which institutions we may need to
-						contact to help you get set up..</p>
-				</div>
-				<div style="float: left; width: 70%" title="Customers">
-					Do you have any current or launching customers for your service? If so, please list these below
-					<textarea name="Customers" id="customers" style="width: 80%; height: 200px"></textarea>
+					<p>Do you have any current or launching customers for your service? If so, please list them below</p>
+					<textarea name="Customers" id="customers"
+                              style="width: 80%; height: 200px"><?php echo isset($connectionDetails['Customers']) ? $connectionDetails['Customers'] : '' ; ?></textarea>
 				</div>
 			</fieldset>
-			<br/>
-			
-			<!--  Test or Production  -->
-			<fieldset id="state">
-				<legend>Test or Production</legend>
+
+			<!--  Test or production  -->
+			<fieldset>
+				<legend>Test or production</legend>
 				<div>
 					<p>
-						A production connection to the platform can only be realized after
-						a successful test connection has been made. For testing proposes,
-						SURFnet offers a <a href="">Do-It-Yourself Platform</a> that
-						allows you to test your technical setup in a fashion very similar
+						A production connection to the platform can only be made after
+						a successful test connection. For testing proposes,
+						SURFnet offers a <a href="https://wiki.surfnet.nl/display/surfconextdev/Connecting+to+SURFconext+test+environment" target="_blank">Test Platform</a> that
+						allows you to test your technical setup which is similar
 						to a production connection. <b>Please note that a production
-						connection cannot be established without a signed SURFconext
-						contract and optionally a license agreement.</b>
+						connection can not be established without a signed SURFconext
+						contract.</b>
 					</p>
 				</div>
-				<div style="float: left; width: 70%" title="State">
-					Are you requesting a Test or a Production connection?<br/>
-					<input name="State" type="radio" id="test" name="test" value="test"/>&nbsp;I want to make a test connection</br>
-					<input name="State" type="radio" id="production" name="production" value="production"/>&nbsp;I want to make a production connection	
-				</div>		
+				<section id="state">
+					<p>Are you requesting a Test or a Production connection?</p>
+					<label for="test"><input name="State" type="radio" id="test" name="test" value="test"
+                            <?php echo (isset($connectionDetails['State']) && $connectionDetails['State'] === 'test') ? 'checked' : '';?> />I want to make a test connection</label>
+					<label for="production"><input name="State" type="radio" id="production" name="production" value="production"
+                            <?php echo (isset($connectionDetails['State']) && $connectionDetails['State'] === 'production') ? 'checked' : '';?>/>I want to make a production connection</label>
+				</section>
 			</fieldset>
 			<br/>
-			
+
 			<!--  Deadlines -->
-			<fieldset id="planning">
-				<legend>Planning & Deadlines</legend>
+			<fieldset>
+				<legend>Planning & deadlines</legend>
 				<div>
 					<p>
-						As soon as <a href="">technical</a> and <a href="">contractual</a>
+						As soon as <a href="https://wiki.surfnet.nl/display/surfconextdev/Technical+information" target="_blank">technical</a> and <a href="https://wiki.surfnet.nl/display/surfconextdev/Connecting+your+service+to+SURFconext" target="_blank">contractual</a>
 						requirements are met, SURFnet will need between 3 to 5 days to
-						operationalize the connection.</br> For managing expectations and
-						our planning, please provide us with information when you would
-						like to have the connection you are currently requesting
-						operational.
-					</p>
+						operationalize the connection.</p>
 				</div>
-				<div style="float: left; width: 70%" title="Planning">
-					When do you want your service to be connected?
-					<textarea name="Planning" id="planning" style="width: 80%; height: 200px"></textarea>
-				</div>
+				<section>
+					<p>When do you want your service to be connected?</p>
+					<textarea name="Planning" id="planning" style="width: 80%; height: 200px"><?php echo isset($connectionDetails['Planning']) ? $connectionDetails['Planning'] : '' ; ?></textarea>
+				</section>
 			</fieldset>
-	
-	<input type="submit" value="Continue">
-	
-	</form>
+
+        <button id="confirmation_admin_info" type="submit" class="btn btn-primary">Continue</button>
+
+
+    </form>
 
 </div>
 
 </section>
-</div>
+
 

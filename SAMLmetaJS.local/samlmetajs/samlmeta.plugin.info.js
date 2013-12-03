@@ -60,7 +60,7 @@
 			infoHTML += '<ul class="errors"></ul>';
 			infoHTML += addLanguageSelect(randID, lang, 'name');
 			infoHTML += '<input type="text" name="' + randID + '-name-name" id="' + randID + '-name" value="' + (name || '') + '" />' +
-				'<button style="" class="removename">Remove</button>' +
+				'<button style="" class="btn removename">Remove</button>' +
 				'</div>';
 
 			$(infoHTML).appendTo("div#info div#infoname").find('button.removename').click(function (e) {
@@ -73,7 +73,7 @@
 			var infoHTML = '<div class="infodescrdiv"><div>';
 			infoHTML += '<ul class="errors"></ul>';
 			infoHTML += addLanguageSelect(randID, lang, 'descr');
-			infoHTML += '<button style="" class="removedescr">Remove</button>' +
+			infoHTML += '<button style="" class="btn removedescr">Remove</button>' +
 				'</div><div>' +
 				'<textarea name="' + randID + '-name-name" id="' + randID + '-name">' + (descr || '') + '</textarea>' +
 				'</div></div>';
@@ -89,7 +89,7 @@
 			infoHTML += '<ul class="errors"></ul>';
 			infoHTML += addLanguageSelect(randID, lang, 'keywords');
 			infoHTML += '<input type="text" name="' + randID + '-name-name" id="' + randID + '-name" value="' + (keywords || '') + '" />' +
-				'<button style="" class="removekeywords">Remove</button>' +
+				'<button style="" class="btn removekeywords">Remove</button>' +
 				'</div>';
 
 			$(infoHTML).appendTo("div#info div#infokeywords").find('button.removekeywords').click(function (e) {
@@ -103,7 +103,7 @@
 			infoHTML += '<ul class="errors"></ul>';
 			infoHTML += addLanguageSelect(randID, lang, 'logo');
 			infoHTML += '<input type="url" name="logo-' + randID + '-location-name" id="logo-' + randID + '-location" value="' + (logo.location ||'') + '" />' +
-				'<button class="removelogo">Remove</button>' +
+				'<button class="btn removelogo">Remove</button>' +
 				'</div>' +
 
 				'<div>' +
@@ -156,7 +156,7 @@
 			infoHTML += '<ul class="errors"></ul>';
 			infoHTML += addLanguageSelect(randID, lang, 'informationurl');
 			infoHTML += '<input type="text" name="' + randID + '-name-name" id="' + randID + '-name" value="' + (informationUrl || '') + '" />' +
-				'<button style="" class="removeinformationurl">Remove</button>' +
+				'<button style="" class="btn removeinformationurl">Remove</button>' +
 				'</div>';
 
 			$(infoHTML).appendTo("div#info div#infoinformationurl").find('button.removeinformationurl').click(function (e) {
@@ -170,7 +170,7 @@
 			infoHTML += '<ul class="errors"></ul>';
 			infoHTML += addLanguageSelect(randID, lang, 'privacystatementurl');
 			infoHTML += '<input type="text" name="' + randID + '-name-name" id="' + randID + '-name" value="' + (privacyStatementUrl || '') + '" />' +
-				'<button style="" class="removeprivacystatementurl">Remove</button>' +
+				'<button style="" class="btn removeprivacystatementurl">Remove</button>' +
 				'</div>';
 
 			$(infoHTML).appendTo("div#info div#infoprivacystatementurl").find('button.removeprivacystatementurl').click(function (e) {
@@ -253,42 +253,42 @@
 				'<fieldset class="name"><legend>Name of Service</legend>',
 				'<div id="infoname"></div>',
 				'<div>',
-				'<button class="addname">Add name in one more language</button>',
+				'<button class="addname btn">Add name in one more language</button>',
 				'</div>',
 				'</fieldset>',
 
 				'<fieldset class="description"><legend>Description of Service</legend>',
 				'<div id="infodescr"></div>',
 				'<div>',
-				'<button class="adddescr">Add description in one more language</button>',
+				'<button class="adddescr btn">Add description in one more language</button>',
 				'</div>',
 				'</fieldset>',
 
 				'<fieldset class="logo"><legend>Logo of Service</legend>',
 				'<div id="infologo"></div>',
 				'<div>',
-				'<button class="addlogo">Add logo in one more language</button>',
+				'<button class="addlogo btn">Add logo in one more language</button>',
 				'</div>',
 				'</fieldset>',
 
 				'<fieldset class="keywords"><legend>Keywords (space separated)</legend>',
 				'<div id="infokeywords"></div>',
 				'<div>',
-				'<button class="addkeywords">Add keywords in one more language</button>',
+				'<button class="addkeywords btn">Add keywords in one more language</button>',
 				'</div>',
 				'</fieldset>',
 
 				'<fieldset class="informationurl"><legend>URL to information about the service</legend>',
 				'<div id="infoinformationurl"></div>',
 				'<div>',
-				'<button class="addinformationurl">Add URL in one more language</button>',
+				'<button class="addinformationurl btn">Add URL in one more language</button>',
 				'</div>',
 				'</fieldset>',
 
 				'<fieldset class="informationurl"><legend>URL to privacy statement about the service</legend>',
 				'<div id="infoprivacystatementurl"></div>',
 				'<div>',
-				'<button class="addprivacystatementurl">Add URL in one more language</button>',
+				'<button class="addprivacystatementurl btn">Add URL in one more language</button>',
 				'</div>',
 				'</fieldset>',
 

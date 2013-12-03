@@ -9,8 +9,8 @@
 			// This function can be used to add content to the page if a button is pressed.
 			var metadataHTML = '<form action="?" method="post"><textarea name="metadata" id="metadata" style="width: 100%"></textarea></form>' +
 			'<div>' +
-			'<button class="prettify">Pretty format</button>' +
-			'<button class="wipe">Wipe</button>' +
+			'<button class="prettify btn">Pretty format</button>' +
+			'<button class="wipe btn">Wipe</button>' +
 			'</div>';
 
 			// Add the templateHTML to the content div 
@@ -65,10 +65,10 @@
 			pluginTabs.content.push(
 				'<div id="metadata" class="tabContent">' +
 					'<div>' +
-                    '<button class="prettify">Pretty format</button>' +
-                    '<button class="wipe">Wipe</button>' +
-                    '<button class="update">Update</button>' +
-                    '<button class="send">Send</button>' +
+                    '<button class="prettify btn">Pretty format</button>' +
+                    '<button class="wipe btn">Wipe</button>' +
+                    '<button class="update btn">Update</button>' +
+                    '<button class="send btn">Send</button>' +
                     '</div>' +
 				'</div>'
 			);
@@ -91,9 +91,9 @@
 					//'<div><p>A template info text</p>' +
 					//'<form action="?" method="post"><textarea name="metadata" id="metadata" style="width: 100%"></textarea></form>' +
 					'<div>' +
-					'<button class="prettify">Pretty format</button>' +
-					'<button class="wipe">Wipe</button></br>' +
-                    '<button class="send">Send</button>' + +
+					'<button class="prettify btn">Pretty format</button>' +
+					'<button class="wipe btn">Wipe</button></br>' +
+                    '<button class="send btn">Send</button>' + +
                     '</div></fieldset>';
 					
 

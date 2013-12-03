@@ -36,7 +36,7 @@
 
 			infoHTML += '</select>' +
 				'<input type="text" name="' + randID + '-name-name" id="' + randID + '-name" value="' + (name || '') + '" />' +
-				'<button style="" class="removename">Remove</button>' +
+				'<button style="" class="btn removename">Remove</button>' +
 				'</div>';
 
 			$(infoHTML).appendTo("div#org div#" + typeid + "").find('button.removename').click(function (e) {
@@ -70,7 +70,7 @@
 
 			infoHTML += '</select>' +
 				'<input type="text" name="' + randID + '-name-name" id="' + randID + '-name" value="' + (name || '') + '" />' +
-				'<button style="" class="removename">Remove</button>' +
+				'<button style="" class="btn removename">Remove</button>' +
 				'</div>';
 
 			$(infoHTML).appendTo("div#org div#" + typeid + "").find('button.removename').click(function (e) {
@@ -104,7 +104,7 @@
 
 			infoHTML += '</select>' +
 				'<input type="text" name="' + randID + '-name-name" id="' + randID + '-name" value="' + (name || '') + '" />' +
-				'<button style="" class="removename">Remove</button>' +
+				'<button style="" class="btn removename">Remove</button>' +
 				'</div>';
 
 			$(infoHTML).appendTo("div#org div#" + typeid + "").find('button.removename').click(function (e) {
@@ -138,21 +138,21 @@
 					'<fieldset class="name"><legend>Name of organization</legend>' +
 						'<div id="orgname"></div>' +
 						'<div>' +
-							'<button class="addname">Add name in one more language</button>' +
+							'<button class="addname btn">Add name in one more language</button>' +
 						'</div>' +
 					'</fieldset>' +
 
 					'<fieldset class="name"><legend>Displayname of organization</legend>' +
 						'<div id="orgdisplayname"></div>' +
 						'<div>' +
-							'<button class="adddisplayname">Add displayname in one more language</button>' +
+							'<button class="adddisplayname btn">Add displayname in one more language</button>' +
 						'</div>' +
 					'</fieldset>' +
 
 					'<fieldset class="entityid"><legend>URL to information about organization</legend>' +
 						'<div id="orgurl"></div>' +
 						'<div>' +
-							'<button class="addurl">Add URL in one more language</button>' +
+							'<button class="addurl btn">Add URL in one more language</button>' +
 						'</div>' +
 					'</fieldset>' +
 

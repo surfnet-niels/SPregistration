@@ -1,0 +1,172 @@
+div#tabs fieldset {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+div#tabs fieldset legend {
+	color: #999;
+    border : none;
+    margin: 0px;
+    padding: 5px 2px;
+	font-size: small;
+	background-repeat: no-repeat;
+	background-position: left;
+    line-height: 0px;
+
+}
+
+div#tabs {
+	font-family: Arial, sans-serif;
+	font-weight: lighter;
+	font-size: 12px;
+}
+div#tabs div#rawmetadata textarea{
+	height: 400px;
+}
+div#tabs div#certs textarea{
+	height: 140px;
+}
+div#tabs textarea {
+	font-family: "Monaco", monospace;
+	font-size: 90%;
+	width: 100%;
+	height: 70px;
+	border: 1px solid #ccc;
+}
+
+div#tabs p {
+	color: #777;
+	font-size: small;
+}
+div#tabs button {
+	margin: 4px; padding: 4px;
+}
+
+
+div.ui-tabs-panel ul.errors {
+	margin: 1em;
+	padding-left: 2em;
+	color: rgb(189, 54, 47);
+}
+
+/* Generic field styles */
+.inlineField {
+	float: left;
+	margin: 2px 10px 5px;
+}
+
+.wideField input {
+	width: 80%;
+}
+
+.radioGroup {
+	margin-top: 10px;
+}
+
+.radioGroup label {
+	display: inline;
+	margin-right: 6px;
+}
+
+.newRow {
+	clear: left;
+}
+
+/* Verification box */
+div#tabs div#samlmetajs_testresults div.samlmetajs_testentry {
+	padding: 5px;
+	min-height: 16px;
+	border-top: 1px solid #ddd;
+}
+div#tabs div#samlmetajs_testresults div.samlmetajs_testentry.samlmetajs_testvalue1 {
+	background-image: none;
+}
+div#tabs div#samlmetajs_testresults div.samlmetajs_testentry.samlmetajs_testvalue0.samlmetajs_sigvalue1 {
+    background-image: none;
+	color: rgb(189, 54, 47);
+}
+div#tabs div#samlmetajs_testresults div.samlmetajs_testentry.samlmetajs_testvalue0.samlmetajs_sigvalue2 {
+    background-image: none;
+    color: rgb(189, 54, 47);
+}
+div#tabs div#samlmetajs_testresults div.samlmetajs_testentry.samlmetajs_testvalue2 {
+	background-image: none;
+}
+
+
+
+/* Metadata tab */
+
+
+
+/* Information tab */
+div#tabs div#info div.infonamediv select { width: auto; }
+div#tabs div#info div.infonamediv input { width: 400px; }
+div#tabs div#info div.infonamediv button { width: auto; }
+
+div#tabs div#info div.infodescrdiv {
+	margin-bottom: 1em;
+}
+
+div#org fieldset legend, div#info fieldset legend {
+	background-image: none;
+}
+div#org fieldset.description legend, div#info fieldset.description legend {
+	background-image: none;
+}
+
+div#info fieldset.logo legend {
+	background-image: none;
+}
+
+div#tabs div#info div.infologodiv select { width: auto; }
+div#tabs div#info div.infologodiv input[type=url] { width: 400px; }
+div#tabs div#info div.infologodiv button { width: auto; }
+
+.logopreview {
+	float: right;
+	margin: 1em;
+}
+
+.logopreview figcaption {
+	text-align: center;
+}
+
+.logopreview img {
+	margin-top: 0.5em;
+}
+
+
+/* SAML SP tab */
+
+div#tabs div#endpoints fieldset legend {
+	background-image: none;
+}
+
+
+/* Contacts tab */
+div#tabs div#contact div.contactfield input {
+	width: 200px ! important;
+}
+div#tabs div#contact div.contactfield label {
+	width: 200px ! important;
+	display: block;
+	color: #999;
+	font-size: small;
+}
+div#tabs div#contact div.contactfield {
+	float: left;
+	margin: 2px 10px 10px 10px;
+/*	width: 45%;*/
+}
+div#tabs div#contact fieldset legend {
+	background-image: none;
+}
+
+
+/* Certificates tab */
+
+div#tabs div#certs fieldset legend {
+	background-image: none;
+
+}
