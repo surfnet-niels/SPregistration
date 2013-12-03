@@ -95,7 +95,7 @@ sendMail2($to_email, $from_email, "[SPregistration] New SP connection request " 
         <h3>Thanks for your information.</h3>
 
         <p>
-            The mail with your submitted information is send to <em><?php echo $to_email ?></em>. Please note that it will take a minimal of 4 workdays to process your information.
+            The mail with your submitted information is send to <em><?php echo $email ?></em>. Please note that it will take a minimal of 4 workdays to process your information.
         <p>
     </div>
 </section>
