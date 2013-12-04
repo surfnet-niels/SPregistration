@@ -57,9 +57,9 @@ if (isset($_POST["page"])) {
 }
 
 // We can also directly go to page 3 with a metadata url
-if (isset($_GET["metadata-url"])) {
+if (isset($_GET[$conf['metadata-url-provided-parameter']])) {
     $pagenr = 3;
-    $_SESSION['formContent']['confirmedMetadata']['metadataURL'] = $_GET["metadata-url"];
+    $_SESSION['formContent']['confirmedMetadata']['metadataURL'] = $_GET[$conf['metadata-url-provided-parameter']];
     $_SESSION['urlProvided'] = true;
 }
 
