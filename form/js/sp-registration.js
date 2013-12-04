@@ -54,27 +54,23 @@ $(function () {
                 return;
             }
             $('#submit_metadata_url').click(function(){
-                $('p.warning').remove();
-                var validUrl = ($('#metadataURL').val().trim() != "");
-                if (!validUrl) {
-                    spRegistrationModule.appendWarning($('#metadataURL').parent(), 'Metadata URL');
-                    event.preventDefault();
-                    return false;
-                }
-                return true;
+                return spRegistrationModule.metadataWarning('#metadataURL', 'Metadata URL');
             });
 
             $('#submit_metadata_xml').click(function(){
-                $('p.warning').remove();
-                var validXml = ($('#metadataURL').val().trim() != "");
-                if (!validXml) {
-                    spRegistrationModule.appendWarning($('#metadataXML').parent(), 'Metadata XML');
-                    event.preventDefault();
-                    return false;
-                }
-                return true;
+                return spRegistrationModule.metadataWarning('#metadataXML', 'Metadata XML');
             });
+        },
 
+        metadataWarning: function (selector, metadataSource) {
+            $('p.warning').remove();
+            var valid = ($(selector).val().trim() != "");
+            if (!valid) {
+                spRegistrationModule.appendWarning($(selector).parent(), metadataSource);
+                event.preventDefault();
+                return false;
+            }
+            return true;
         },
 
         appendWarning: function ($component, informationType) {
