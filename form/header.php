@@ -1,17 +1,12 @@
 <?php 
 
-// Decent debugging:
-//require '../../kint/Kint.class.php';
 include_once 'functions.php';
-// Email is send from and to
-$to_email = array("lucas@vanlierop.org","femke.morsch@surfnet.nl"); //,
-$from_email = array("surfconext-beheer@surfnet.nl" => "SURFconext Beheer");
+include_once 'conf.php';
 
+$to_email = $conf['to_email'];
+$from_email = $conf['from_email'];
 
-// Require user AuthN (true/false)
-// If true, Assumes simplesamlphp to be installed
-// Turn it of for easy dev work on form
-$requireAuthN = false;
+$requireAuthN = $conf['requireAuthN'];
 
 if ($requireAuthN) {
 	require_once('../../../simplesamlphp/lib/_autoload.php');
@@ -27,9 +22,9 @@ if ($requireAuthN) {
 	$email = $attributes["urn:mace:dir:attribute-def:mail"][0];
 	$home_org = $attributes["urn:mace:terena.org:attribute-def:schacHomeOrganization"][0];
 } else {
-	$user = "John Doe";
-	$email = "oharsta@zilverline.com";
-	$home_org = "example.org";
+	$user = $conf['mockUser']['user'];
+	$email = $conf['mockUser']['email'];
+	$home_org = $conf['mockUser']['home_org'];
 }
 
 // Page flow and headers
@@ -76,9 +71,6 @@ if (!isset($formContent)) {
     $formArray = array();
 }
 
-//$formContent = $_SESSION["formContent"];
-//echo "<br>Processing Form Content......<br>";
-
 if ($formArrayHeaders[$pagenr] != NULL) {
 	foreach ($_POST as $key => $value) {
 		if ($key != "page") {
@@ -87,17 +79,9 @@ if ($formArrayHeaders[$pagenr] != NULL) {
 	}
 	$_SESSION["formContent"][$formArrayHeaders[$pagenr]] = $formArray;
 };
-//echo "<br>Processing Done";
 
 // Trigger error handling
 set_error_handler("exception_error_handler");
-
-/*
-d($_SESSION);
-d($_GET);
-d($_POST);
-d($formContent);
-*/
 
 if (!isset($_SESSION['count'])) {
 	$_SESSION['count'] = 0;
