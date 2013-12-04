@@ -2,7 +2,7 @@
 <p>Thank you for your request to add your Service to the SURFconext platform.</p>
 
 <?php if (!empty($data['formArray'])): ?>
-    <p>We recieved the following information about your Service:</p>
+    <p>We received the following information about your Service:</p>
     <div style='background-color: #f1f1f1; border-radius: 8px; margin: 15px; padding: 10px;'>
         <table>
             <?php foreach ($data['formArray'] as $conextDataKey => $conextDataValue): ?>

@@ -18,7 +18,7 @@ Home Organisation : <?php echo $data['homeOrg']; ?>
 A copy of this information was forwarded to your email address.
 
 <?php if (!empty($data['formArray'])): ?>
-We recieved the following information about your Service:
+We received the following information about your Service:
 
     <?php foreach ($data['formArray'] as $conextDataKey => $conextDataValue): ?>
         <?php echo $conextDataKey . " : " . $conextDataValue; ?>
