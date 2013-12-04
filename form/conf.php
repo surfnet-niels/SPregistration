@@ -4,7 +4,7 @@ $conf = array(
     /*
      * The email where the information is send to (apart from the logged in user)
      */
-    'to_email' => array("oharsta@zilverline.com" => "Okke Harsta"),
+    'to_email' => array("surfconext-beheer@surfnet.nl" => "SURFconext Beheer"),
     /*
      * The from email address
      */
@@ -14,7 +14,7 @@ $conf = array(
      * If true, Assumes simplesamlphp to be installed
      * Turn it of for easy dev work on form
      */
-    'requireAuthN' => false,
+    'requireAuthN' => true,
     /*
      * The mock user if the AuthN is turned off
      */
