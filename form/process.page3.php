@@ -7,18 +7,18 @@ $XMLerror = false;
 $skipMetaData = isset($_POST["skipMetaData"]);
 if ($skipMetaData) {
     $metadataFile = '';
-} elseif (strlen($metadataURL) <= 0 && strlen($metadataXML) <= 0) {
-    $XMLerror = true;
-    $errorMSG = "Please use at least one means of providing Metadata";
-} elseif (strlen($metadataXML) > 0) {
+} elseif (isset($_POST["submitMetadataXml"])) {
     $metadataFile = $metadataXML;
-} else {
+} elseif (isset($_POST["submitMetadataUrl"])) {
     try {
         $metadataFile = file_get_contents($metadataURL);
     } catch (Exception $e) {
         $XMLerror = true;
         $errorMSG = 'Something is wrong with the URL you provided. ' . $metadataURL . ' is not a valid XML endpoint';
     }
+} else {
+    $XMLerror = true;
+    $errorMSG = "Please provide us either with the Metadata URL of XML";
 }
 ?>
 

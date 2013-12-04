@@ -20,13 +20,13 @@
 	</div>
 	<div>
 		<input type="text" id="metadataURL" name="metadataURL" style="width: 80%" value="<?php echo isset($confirmedMetadata['metadataURL']) ? $confirmedMetadata['metadataURL'] : ''; ?>" />
-		<button id="submit_metadata_url" type="submit" class="btn btn-primary block">Submit URL</button>
+		<button id="submit_metadata_url" name="submitMetadataUrl" type="submit" class="btn btn-primary block">Submit URL</button>
 	</div>
 		<p><em>Option 2</em>:</p>
     <p>Paste the XML metadata in the text area below.</p>
 	<div>
 		<textarea name="metadataXML" id="metadataXML" style="width: 80%; height: 500px"><?php echo (isset($confirmedMetadata['metadataXML']) && !$metadataResult) ? $confirmedMetadata['metadataXML'] : ($metadataResult ? $metadataResult : ''); ?></textarea>
-		<button id="submit_metadata_xml"  type="submit" class="btn btn-primary block">Submit XML</button>
+		<button id="submit_metadata_xml" name="submitMetadataXml" type="submit" class="btn btn-primary block">Submit XML</button>
 
 	 </div>
 	<p><em>Option 3</em>:</p>
