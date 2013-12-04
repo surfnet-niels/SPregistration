@@ -16,22 +16,8 @@
 <script type="text/javascript" src="../SAMLmetaJS.local/samlmetajs/samlmeta.plugin.org.js"></script>
 <script type="text/javascript" src="../SAMLmetaJS.local/samlmetajs/samlmeta.plugin.contact.js"></script>
 <script type="text/javascript" src="../SAMLmetaJS.local/samlmetajs/samlmeta.plugin.saml2sp.js"></script>
-<!-- <script type="text/javascript" src="../SAMLmetaJS/samlmetajs/samlmeta.plugin.location.js"></script> -->
 <script type="text/javascript" src="../SAMLmetaJS.local/samlmetajs/samlmeta.plugin.certs.js"></script>
 <script type="text/javascript" src="../SAMLmetaJS.local/samlmetajs/samlmeta.plugin.attributes.js"></script>
-<!-- <script type="text/javascript" src="../SAMLmetaJS/samlmetajs/samlmeta.plugin.fedlab.js"></script> -->
-
-<!-- 
-	You are reccomended to select which plugins you would like to use, and then use the download package
-	minifier at 
-		
-		http://samlmetajs.simplesamlphp.org/download
-	
-	You will then end up with a single file to include instead of the list of files shown above. This will be much more effective 
-	for the user. You would need to include the file like this:
-	
-	<script type="text/javascript" src="SAMLmetaJS/samlmeta.info-organization-contact-certs-saml2sp-attributes.min.js"></script> 
--->
 
 <link type="text/css" href="../SAMLmetaJS.local/samlmetajs/css/samlmetajs.css" rel="stylesheet" />
 	

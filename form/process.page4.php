@@ -8,7 +8,6 @@ $geshi = new GeSHi(beautifyXML($editedMetadata), "XML");
 $connectionDetails = isset($_SESSION["formContent"]["ConnectionDetails"]) ? $_SESSION["formContent"]["ConnectionDetails"] : array();
 $metadataURL = $_SESSION["formContent"]['confirmedMetadata']['metadataURL'];
 
-//d($_SESSION);
 ?>
 
 <section class="content">

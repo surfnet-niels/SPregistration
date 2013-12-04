@@ -122,6 +122,5 @@ $(function () {
 
     spRegistrationModule.init();
 
-
 });
 
