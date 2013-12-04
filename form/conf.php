@@ -25,7 +25,7 @@ $conf = array(
     /*
      * ISet to true if you want to preview the mail send in the final confirmation screen
      */
-    'debug' => true
+    'debug' => false
 
 );
 
