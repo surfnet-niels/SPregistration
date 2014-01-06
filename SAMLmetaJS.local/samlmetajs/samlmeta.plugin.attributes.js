@@ -63,7 +63,13 @@
 			for(attrname in SAMLmetaJS.Constants.attributes) {
 				if (SAMLmetaJS.Constants.attributes.hasOwnProperty(attrname)) {
 					checked = (attributes[attrname] ? 'checked="checked"' : '');
-					attributeHTML += '<div style="float: left; width: 450px" title="' +SAMLmetaJS.Constants.attributeDescriptions[attrname] +'">';
+					console.log(SAMLmetaJS.Constants.attributes[attrname]);
+					console.log(SAMLmetaJS.Constants.attributes[attrname].indexOf("oid"));
+					console.log(SAMLmetaJS.Constants.attributes[attrname].indexOf("mace"));
+					
+					(SAMLmetaJS.Constants.attributes[attrname].indexOf("mace") > 0) ? pos="right" : pos="left";
+					
+					attributeHTML += '<div style="float: '+pos+'; width: 400px" title="' + SAMLmetaJS.Constants.attributeDescriptions[attrname] +'">';
 					attributeHTML += '<input type="checkbox" id="' + attrname + '-id" name="' + attrname + '" ' + checked + '/>';
 					attributeHTML +=  SAMLmetaJS.Constants.attributes[attrname] + '</div>';
 					//attributeHTML += '<label for="' + attrname + '-id">' + SAMLmetaJS.Constants.attributes[attrname] + '</label></div>';

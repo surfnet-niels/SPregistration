@@ -14,7 +14,7 @@ $conf = array(
      * If true, Assumes simplesamlphp to be installed
      * Turn it of for easy dev work on form
      */
-    'requireAuthN' => true,
+    'requireAuthN' => false,
     /*
      * It is possible to skip the first two pages if you provide a metadata query parameter. Here
      * you can specify the parameter's name.
@@ -32,7 +32,7 @@ $conf = array(
     /*
      * ISet to true if you want to preview the mail send in the final confirmation screen
      */
-    'debug' => false
+    'debug' => true
 
 );
 
