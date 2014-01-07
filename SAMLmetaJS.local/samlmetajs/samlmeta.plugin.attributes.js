@@ -60,21 +60,34 @@
 
 			// Set attributes
 			attributeHTML = '';
+			rightattributelistHTML = '<div style="float: right; width: 48%; border: dashed 1px grey; padding: 3px;" title="OIDattrlist"><strong>MACE Dir based Attributes</strong><br/><br/>';
+			leftattributelistHTML = '<div style="float: left; width: 48%; border: dashed 1px grey; padding: 3px;" title="MACEattrlist"><strong>OID based Attributes (Preferred)</strong><br/><br/>';
+			
+			
 			for(attrname in SAMLmetaJS.Constants.attributes) {
 				if (SAMLmetaJS.Constants.attributes.hasOwnProperty(attrname)) {
 					checked = (attributes[attrname] ? 'checked="checked"' : '');
 					console.log(SAMLmetaJS.Constants.attributes[attrname]);
 					console.log(SAMLmetaJS.Constants.attributes[attrname].indexOf("oid"));
 					console.log(SAMLmetaJS.Constants.attributes[attrname].indexOf("mace"));
+					 
+					if (SAMLmetaJS.Constants.attributes[attrname].indexOf("mace") > 0) {
+						rightattributelistHTML += '<input type="checkbox" id="' + attrname + '-id" name="' + attrname + '" ' + checked + '/> ' + SAMLmetaJS.Constants.attributes[attrname];
+					} else {
+						leftattributelistHTML += '<input type="checkbox" id="' + attrname + '-id" name="' + attrname + '" ' + checked + '/> ' + SAMLmetaJS.Constants.attributes[attrname];
+					}
 					
-					(SAMLmetaJS.Constants.attributes[attrname].indexOf("mace") > 0) ? pos="right" : pos="left";
-					
-					attributeHTML += '<div style="float: '+pos+'; width: 400px" title="' + SAMLmetaJS.Constants.attributeDescriptions[attrname] +'">';
-					attributeHTML += '<input type="checkbox" id="' + attrname + '-id" name="' + attrname + '" ' + checked + '/>';
-					attributeHTML +=  SAMLmetaJS.Constants.attributes[attrname] + '</div>';
+					//attributeHTML += '<div style="float: '+pos+'; width: 400px" title="' + SAMLmetaJS.Constants.attributeDescriptions[attrname] +'">';
+					//attributeHTML += '<input type="checkbox" id="' + attrname + '-id" name="' + attrname + '" ' + checked + '/>';
+					//attributeHTML +=  SAMLmetaJS.Constants.attributes[attrname] + '</div>';
 					//attributeHTML += '<label for="' + attrname + '-id">' + SAMLmetaJS.Constants.attributes[attrname] + '</label></div>';
 				}
 			}
+			leftattributelistHTML += '</div>';
+			rightattributelistHTML += '</div>';
+			
+			attributeHTML +=  rightattributelistHTML + leftattributelistHTML;
+			
 			attributeHTML += '<br style="height: 0px; clear: both" />';
 			$("div#attributes > div.content").empty();
 			$("div#attributes > div.content").append(attributeHTML);
