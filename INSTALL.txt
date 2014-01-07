@@ -50,6 +50,8 @@ mkdir SPregistration
 cd SPregistration
 git clone https://github.com/surfnet-niels/SPregistration.git
 
+Remain in the SPregitration directory when installing the other components!
+
 * Install SURFnet style-guide:
 git clone https://github.com/SURFnet/SURFnet-styleguide.git
 
