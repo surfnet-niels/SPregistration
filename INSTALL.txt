@@ -47,7 +47,9 @@ Installation
 
 * Place the spform in a directory under the root of you webserver.
 move into the SPregistration directory
+mkdir SPregistration
 cd SPregistration
+git clone https://github.com/surfnet-niels/SPregistration.git
 
 * Install SURFnet style-guide
 git clone https://github.com/SURFnet/SURFnet-styleguide.git
